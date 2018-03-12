@@ -1,0 +1,20 @@
+{
+  "name": "books-api",
+  "version": "1.0.0",
+  "description": "Simple books API with all tests included",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Waldemar Neto <waldemarnt@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "http-status": "^0.2.3",
+    "jwt-simple": "^0.5.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.1.0",
+    "sequelize": "^3.23.6",
+    "sqlite3": "^3.1.13"
+  }
+}

@@ -1,0 +1,6 @@
+
+*.sqlite
+
+API RESTFULL/node_modules/
+
+API RESTFULL/package-lock\.json

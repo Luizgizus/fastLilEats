@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TESTE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Todas as mesas</h1>
+        <a href="http://localhost:8000/tables" target="_blank">Todas as mesas</a>
+
+
+        <h1>pegar uma mesa por ID</h1>
+        <label>ID</label>
+        <br>
+        <input type="text" id="idG">
+        <br>
+        <button type="submit" onClick="getById()">Enviar</button>
+
+        <p id="mesaId"></p>
+
+
+
+        <h1>CRIAR</h1>
+        <label>Nome</label>
+        <br>
+        <input type="text" id="name">
+        <br>
+
+        <label>Qunatidade de mesas</label>
+        <br>
+        <input type="text" id="qtdChairs">
+        <br>
+        <button type="submit" onClick="create()">Enviar</button>
+
+
+
+
+
+        <h1>ATUALIZAR</h1>
+        <label>ID</label>
+        <br>
+        <input type="text" id="id">
+        <br>
+        
+        <label>Nome</label>
+        <br>
+        <input type="text" id="nname">
+        <br>
+
+        <label>Qunatidade de mesas</label>
+        <br>
+        <input type="text" id="qqtdChairs">
+        <br>
+        <button type="submit" onClick="update()">Enviar</button>
+
+
+
+        <h1>DELETAR</h1>
+        <label>ID</label>
+        <br>
+        <input type="text" id="idD">
+        <br>
+        <button type="submit" onClick="del()">Enviar</button>
+
+
+
+        <script>
+            const create = ()=> {
+                let nome = document.getElementById('name').value
+                let qtdCadeiras = parseInt(document.getElementById('qtdChairs').value)
+                let Request = new XMLHttpRequest()
+
+                const request = {
+                    name : nome,
+                    qtdChairs : qtdCadeiras
+                }
+
+                console.log(request)
+
+                Request.open("POST", "http://localhost:8000/tables", true)
+                Request.setRequestHeader("Content-Type", "application/json");
+                Request.send(JSON.stringify(request))
+                Request.onreadystatechange = function() {
+                   if (Request.readyState == 4 && Request.status == 200) {
+                       var data = Request.responseText;
+                       console.log(data);
+                   }
+                }
+            }
+
+            const update = ()=> {
+                let id =  document.getElementById('id').value
+                let nome = document.getElementById('name').value
+                let qtdCadeiras = parseInt(document.getElementById('qtdChairs').value)
+                let Request = new XMLHttpRequest()
+
+                const request = {
+                    name : nome,
+                    qtdChairs : qtdCadeiras
+                }
+
+                console.log(request)
+
+                Request.open("PUT", "http://localhost:8000/tables/" + id, true)
+                Request.setRequestHeader("Content-Type", "application/json");
+                Request.send(JSON.stringify(request))
+                Request.onreadystatechange = function() {
+                   if (Request.readyState == 4 && Request.status == 200) {
+                       var data = Request.responseText;
+                       console.log(data);
+                   }
+                }
+            }
+
+
+            const del = ()=> {
+                let id =  document.getElementById('idG').value
+                let Request = new XMLHttpRequest()
+
+                Request.open("DELETE", "http://localhost:8000/tables/" + id, true)
+                Request.setRequestHeader("Content-Type", "application/json");
+                Request.send()
+                Request.onreadystatechange = function() {
+                   if (Request.readyState == 4 && Request.status == 200) {
+                       var data = Request.responseText;
+                       console.log(data);
+                   }
+                }
+            }
+
+            const getById = ()=> {
+                let id =  document.getElementById('idD').value
+                let Request = new XMLHttpRequest()
+
+                Request.open("GET", "http://localhost:8000/tables/" + id, true)
+                Request.setRequestHeader("Content-Type", "application/json");
+                Request.send()
+                Request.onreadystatechange = function() {
+                   if (Request.readyState == 4 && Request.status == 200) {
+                       var data = Request.responseText;
+                       console.log(data);
+                       let pMesa =  document.getElementById('mesaId')
+                       pMesa.innerHTML = data
+                   }
+                }
+            }
+
+        
+        </script>
+    </body>
+</html>
