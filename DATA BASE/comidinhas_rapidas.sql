@@ -87,7 +87,7 @@ DROP TABLE IF EXISTS `Mesa`;
 CREATE TABLE IF NOT EXISTS `Mesa` (
 	`idMesa` int(11) NOT NULL AUTO_INCREMENT,
 	`nomeMesa` varchar (20) NOT NULL,
-	`quantidadePessoas` int(11) NOT NULL,
+	`quantidadePessoas` int(11) DEFAULT NULL,
 	`status` varchar(20) NOT NULL,
 	`idPedido` int (11) DEFAULT NULL,
 	PRIMARY KEY (`idMesa`),
