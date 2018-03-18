@@ -3,7 +3,7 @@ const Queries = require("./queries")
 
 class TablesController extends Queries {
   constructor() {
-    super("Mesa", ['nomeMesa', 'quantidadePessoas', 'status'])
+    super("mesa", ['nome'])
   }
 }
 

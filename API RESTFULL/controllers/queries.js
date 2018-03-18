@@ -27,7 +27,7 @@ class Query{
                         reject(err)
                     }else{
                         console.log(params)
-                        const sql = `INSERT INTO ${this.table} (${this.strColumns}) VALUES ('${params.nomeMesa}', ${params.quantidadePessoas}, '${params.status}')`
+                        const sql = `INSERT INTO ${this.table} (${this.strColumns}) VALUES ("${params.nome_mesa}")`
     
                         this.conn.query(sql,(err, result)=>{
                             if(err){
@@ -59,7 +59,7 @@ class Query{
                         reject(err)
                     }else{
                         console.log(params)
-                        const sql = `UPDATE ${this.table} SET ${this.getQueryParams(params)} WHERE id${this.table} = ${id}`
+                        const sql = `UPDATE ${this.table} SET ${this.getQueryParams(params)} WHERE id_${this.table} = ${id}`
     
                         this.conn.query(sql,(err, result)=>{
                             if(err){
@@ -112,7 +112,7 @@ class Query{
                     if(err){
                         reject(err)
                     }else{
-                        const sql = `SELECT * FROM ${this.table} WHERE id${this.table} = ${id}`
+                        const sql = `SELECT * FROM ${this.table} WHERE id_${this.table} = ${id}`
     
                         this.conn.query(sql, (err, result, fields)=>{
                             if(err){
@@ -149,7 +149,7 @@ class Query{
             })
         })
         .then(()=>{
-            const sql = `SELECT * FROM ${this.table} WHERE id${this.table} = ${id}`
+            const sql = `SELECT * FROM ${this.table} WHERE id_${this.table} = ${id}`
 
             this.conn.query(sql, (err, result, fields)=>{
                 return new Promise((reject, resolve)=>{
@@ -171,7 +171,7 @@ class Query{
                     if(err){
                         reject(err)
                     }else{
-                        const sql = `SELECT * FROM ${this.table} ORDER BY id${this.table}`
+                        const sql = `SELECT * FROM ${this.table} ORDER BY id_${this.table}`
     
                         this.conn.query(sql, (err, result, fields)=>{
                             if(err){
@@ -202,7 +202,7 @@ class Query{
                     if(err){
                         reject(err)
                     }else{
-                        const sql = `DELETE FROM ${this.table} WHERE id${this.table} = ${id}`
+                        const sql = `DELETE FROM ${this.table} WHERE id_${this.table} = ${id}`
     
                         this.conn.query(sql,(err, result)=>{
                             if(err){

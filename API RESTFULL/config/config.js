@@ -4,7 +4,7 @@ class Config{
       host: "127.0.0.1",
       user: "root",
       password: "",
-      database: "comidinhas_praticas"
+      database: "comidinhas_rapidas"
     }
   }
 

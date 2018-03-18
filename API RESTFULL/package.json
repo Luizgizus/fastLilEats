@@ -1,10 +1,10 @@
 {
-  "name": "books-api",
+  "name": "fast-lil-eats",
   "version": "1.0.0",
-  "description": "Simple books API with all tests included",
+  "description": "application for manage a restaurant",
   "main": "index.js",
   "scripts": {},
-  "author": "Waldemar Neto <waldemarnt@gmail.com>",
+  "author": "Bruna Silva, Fabiola Vieira, Luiz Henrique, Otavio Miranda",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.3",

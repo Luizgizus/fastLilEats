@@ -27,16 +27,6 @@
         <br>
         <input type="text" id="name">
         <br>
-
-        <label>Qunatidade de mesas</label>
-        <br>
-        <input type="text" id="qtdChairs">
-        <br>
-
-        <label>Status</label>
-        <br>
-        <input type="text" id="status">
-        <br>
         <button type="submit" onClick="create()">Enviar</button>
 
 
@@ -52,16 +42,6 @@
         <label>Nome</label>
         <br>
         <input type="text" id="nname">
-        <br>
-
-        <label>Qunatidade de mesas</label>
-        <br>
-        <input type="text" id="qqtdChairs">
-        <br>
-
-        <label>Status</label>
-        <br>
-        <input type="text" id="sstatus">
         <br>
         <button type="submit" onClick="update()">Enviar</button>
 
@@ -79,14 +59,10 @@
         <script>
             const create = ()=> {
                 let nome = document.getElementById('name').value
-                let statusMesa = document.getElementById('status').value
-                let qtdCadeiras = parseInt(document.getElementById('qtdChairs').value)
                 let Request = new XMLHttpRequest()
 
                 const request = {
-                    nomeMesa : nome,
-                    quantidadePessoas : qtdCadeiras,
-                    status: statusMesa
+                    nome_mesa : nome
                 }
 
                 console.log(request)
@@ -105,14 +81,10 @@
             const update = ()=> {
                 let id =  document.getElementById('id').value
                 let nome = document.getElementById('nname').value
-                let sstatus = document.getElementById('sstatus').value
-                let qtdCadeiras = parseInt(document.getElementById('qqtdChairs').value)
                 let Request = new XMLHttpRequest()
 
                 const request = {
-                    nomeMesa : nome,
-                    status : qtdCadeiras,
-                    quantidadePessoas: sstatus
+                    nome : nome
                 }
 
                 console.log(request)

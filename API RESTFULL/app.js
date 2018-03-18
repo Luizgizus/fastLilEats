@@ -2,7 +2,6 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const TablesRouter = require('./routes/tables')
 const Config = require('./config/config')
-const cors = require('cors')
 
 
 class App {
