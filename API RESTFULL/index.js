@@ -1,5 +1,6 @@
-const app = require('./app')
+const App = require('./app')
+const router = new App()
 
-app.listen('8000', () => {
-  console.log(`app running on 8000`);
-});
+router.app.listen('8000', () => {
+  console.log(`app running on http://localhost:8000`)
+})

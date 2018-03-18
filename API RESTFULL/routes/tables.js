@@ -1,43 +1,64 @@
 const TablesController = require('../controllers/tables')
 
-module.exports = (app) => {
-  const tablesController = new TablesController(app.datasource.models.Table);
-  app.route('/tables')
-  .get((req, res) => {
-    tablesController.getAll()
-    .then(response => {
-      res.status(response.statusCode);
-      res.json(response.data);
-    });
-  })
-  .post((req, res) => {
-    tablesController.create(req.body)
-    .then(response => {
-      res.status(response.statusCode);
-      res.json(response.data);
-    });
-  });
+class RouteTable{
+  constructor(app){
+    this.tablesController = new TablesController()
+    this.app = app
+    
+    this.app.route('/tables')
+    .get((req, res) => {
+      this.tablesController.getAll()
+      .then(response => {
+          res.status(200)
+          res.json(response)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    })
+    .post((req, res) => {
+      this.tablesController.create(req.body)
+      .then(response => {
+        res.status(200)
+        res.json(response)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    })
 
-  app.route('/tables/:id')
-  .get((req, res) => {
-    tablesController.getById(req.params)
-    .then(response => {
-      res.status(response.statusCode);
-      res.json(response.data);
-    });
-  })
-  .put((req, res) => {
-    tablesController.update(req.body, req.params)
-    .then(response => {
-      res.status(response.statusCode);
-      res.json(response.data);
-    });
-  })
-  .delete((req, res) => {
-    tablesController.delete(req.params)
-    .then(response => {
-      res.status(response.statusCode);
-      res.json(response.data);
-    });
-  });
-};
+    this.app.route('/tables/:id')
+    .get((req, res) => {
+      this.tablesController.getById(req.params.id)
+      .then(response => {
+        res.status(200)
+        res.json(response)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    })
+    .put((req, res) => {
+      this.tablesController.update(req.body, req.params.id)
+      .then(response => {
+        res.status(200)
+        res.json(response)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    })
+    .delete((req, res) => {
+      this.tablesController.delete(req.params.id)
+      .then(response => {
+        res.status(200)
+        res.json(response)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    })
+  }
+}
+
+module.exports = RouteTable

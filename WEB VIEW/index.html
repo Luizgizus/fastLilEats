@@ -32,6 +32,11 @@
         <br>
         <input type="text" id="qtdChairs">
         <br>
+
+        <label>Status</label>
+        <br>
+        <input type="text" id="status">
+        <br>
         <button type="submit" onClick="create()">Enviar</button>
 
 
@@ -53,6 +58,11 @@
         <br>
         <input type="text" id="qqtdChairs">
         <br>
+
+        <label>Status</label>
+        <br>
+        <input type="text" id="sstatus">
+        <br>
         <button type="submit" onClick="update()">Enviar</button>
 
 
@@ -69,12 +79,14 @@
         <script>
             const create = ()=> {
                 let nome = document.getElementById('name').value
+                let statusMesa = document.getElementById('status').value
                 let qtdCadeiras = parseInt(document.getElementById('qtdChairs').value)
                 let Request = new XMLHttpRequest()
 
                 const request = {
-                    name : nome,
-                    qtdChairs : qtdCadeiras
+                    nomeMesa : nome,
+                    quantidadePessoas : qtdCadeiras,
+                    status: statusMesa
                 }
 
                 console.log(request)
@@ -92,13 +104,15 @@
 
             const update = ()=> {
                 let id =  document.getElementById('id').value
-                let nome = document.getElementById('name').value
-                let qtdCadeiras = parseInt(document.getElementById('qtdChairs').value)
+                let nome = document.getElementById('nname').value
+                let sstatus = document.getElementById('sstatus').value
+                let qtdCadeiras = parseInt(document.getElementById('qqtdChairs').value)
                 let Request = new XMLHttpRequest()
 
                 const request = {
-                    name : nome,
-                    qtdChairs : qtdCadeiras
+                    nomeMesa : nome,
+                    status : qtdCadeiras,
+                    quantidadePessoas: sstatus
                 }
 
                 console.log(request)
@@ -116,7 +130,7 @@
 
 
             const del = ()=> {
-                let id =  document.getElementById('idG').value
+                let id =  document.getElementById('idD').value
                 let Request = new XMLHttpRequest()
 
                 Request.open("DELETE", "http://localhost:8000/tables/" + id, true)
@@ -131,7 +145,7 @@
             }
 
             const getById = ()=> {
-                let id =  document.getElementById('idD').value
+                let id =  document.getElementById('idG').value
                 let Request = new XMLHttpRequest()
 
                 Request.open("GET", "http://localhost:8000/tables/" + id, true)
