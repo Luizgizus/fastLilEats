@@ -1,20 +1,20 @@
 {
-  "name": "books-api",
+  "name": "fast-lil-eats",
   "version": "1.0.0",
-  "description": "Simple books API with all tests included",
+  "description": "application for manage a restaurant",
   "main": "index.js",
   "scripts": {},
-  "author": "Waldemar Neto <waldemarnt@gmail.com>",
+  "author": "Bruna Silva, Fabiola Vieira, Luiz Henrique, Otavio Miranda",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.1",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "http-status": "^0.2.3",
     "jwt-simple": "^0.5.0",
+    "mysql": "^2.15.0",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.1.0",
-    "sequelize": "^3.23.6",
-    "sqlite3": "^3.1.13"
+    "passport-jwt": "^2.1.0"
   }
 }

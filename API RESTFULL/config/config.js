@@ -1,15 +1,16 @@
-module.exports = {
-  database: 'fastLilEats',
-  username: '',
-  password: '',
-  params: {
-    dialect: 'sqlite',
-    storage: `fastLilEats.sqlite`,
-    define: {
-      underscored: true,
-    },
-  },
-  jwtSecret: 'lilEats##',
-  jwtSession: { session: false },
-};
+class Config{
+  constructor(){
+    this.config = {
+      host: "127.0.0.1",
+      user: "root",
+      password: "",
+      database: "comidinhas_rapidas"
+    }
+  }
 
+  getConfig(){
+    return this.config
+  }
+}
+
+module.exports = Config
