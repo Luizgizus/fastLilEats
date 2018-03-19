@@ -1,8 +1,8 @@
 const bodyParser = require('body-parser')
 const express = require('express')
 const TablesRouter = require('./routes/tables')
+const OrderRouter = require('./routes/order')
 const Config = require('./config/config')
-
 
 class App {
     constructor(){
@@ -22,6 +22,7 @@ class App {
         })
         this.app.use(bodyParser.json())
         this.tablesRouter = new TablesRouter(this.app)
+        this.orderRouter = new OrderRouter(this.app)
     }
 }
 
