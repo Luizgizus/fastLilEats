@@ -242,5 +242,101 @@
                 console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
             }
         </script>
+
+<script>
+    
+    const pegarDados = () =>{
+                let Request1 = new XMLHttpRequest()
+                let Request2 = new XMLHttpRequest()
+                let Request3 = new XMLHttpRequest()
+
+                Request2.open("GET", "http://localhost:8000/tables", true)
+                Request2.setRequestHeader("Content-Type", "application/json");
+                Request2.send()
+                Request2.onreadystatechange = function() {
+                   if (Request2.readyState == 4 && Request2.status == 200) {
+                       var data = JSON.parse(Request2.responseText);
+                       const mesaID = document.getElementById("mesa")
+                       let mesa = `<option value="" selected>Selecione</option>`
+
+                       for(let i = 0 ; i < data.length; i++){
+                           mesa += `<option value="${data[i].id_mesa}">${data[i].nome}</option>`
+                       }
+
+                       mesaID.innerHTML = mesa
+                   }
+                }
+
+                Request3.open("GET", "http://localhost:8000/garcom", true)
+                Request3.setRequestHeader("Content-Type", "application/json");
+                Request3.send()
+                Request3.onreadystatechange = function() {
+                   if (Request3.readyState == 4 && Request3.status == 200) {
+                       var data = JSON.parse(Request3.responseText);
+                       const garcomID = document.getElementById("garcom")
+                       let garcom = `<option value="" selected>Selecione</option>`
+
+                       for(let i = 0 ; i < data.length; i++){
+                           garcom += `<option value="${data[i].id_garcon}">${data[i].nome}</option>`
+                       }
+
+                       garcomID.innerHTML = garcom
+                   }
+                }
+
+                Request1.open("GET", "http://localhost:8000/product", true)
+                Request1.setRequestHeader("Content-Type", "application/json");
+                Request1.send()
+                Request1.onreadystatechange = function() {
+                   if (Request1.readyState == 4 && Request1.status == 200) {
+                       var data = JSON.parse(Request1.responseText);
+                       const produtosID = document.getElementById("produtos")
+                       let produtos = ""
+                       for(let i = 0 ; i < data.length; i++){
+                           produtos += `
+                           <input type="checkbox" name="produtos" value="${data[i].id_produto}">
+                           <label>${data[i].nome}</label><br>
+                           <label>Quantidade</label>
+                           <input type="text" id="${data[i].id_produto}"><br><br>`
+                       }
+
+                       produtosID.innerHTML = produtos
+                   }
+                }
+    }
+
+    const fazerPedido = ()=>{
+        let Request = new XMLHttpRequest()
+        const idGarcon = document.getElementById("garcom").value
+        const idMesa = document.getElementById("mesa").value
+        const produtos = document.getElementsByName("produtos")
+
+        let request = {
+            "id_garcon": idGarcon,
+            "id_mesa": idMesa,
+            "products": []
+        }	
+        
+        for(let i = 0; i < produtos.length; i++){
+            if(produtos[i].checked){
+                const qtd = document.getElementById(produtos[i].value).value
+                request.products.push({"id_produto": produtos[i].value, "qunatidade": qtd})
+            }
+        }
+
+        console.log(request)
+
+        Request.open("POST", "http://localhost:8000/order", true)
+        Request.setRequestHeader("Content-Type", "application/json");
+        Request.send(JSON.stringify(request))
+        Request.onreadystatechange = function() {
+            if (Request.readyState == 4 && Request.status == 200) {
+                var data = Request.responseText;
+                console.log(data);
+            }
+        }
+
+    }
+    </script>
     </body>
 </html>
