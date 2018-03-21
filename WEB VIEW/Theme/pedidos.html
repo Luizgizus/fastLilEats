@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="Dashboard">
-        <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-
+    <!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="">
+            <meta name="author" content="Dashboard">
+            <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+          
         <title>Restaurante La Nourriture</title>
         
         <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -32,209 +32,240 @@
         <script src="respond.js"></script>
     </head>
 
-    <body>
-        <section id="container">
-        <header class="header black-bg">
-            <div class="sidebar-toggle-box">
-                <div class="fa fa-bars tooltips" data-placement="right" ></div>
-            </div>
-            <a href="index.html"class="logo"><b>La Nourriture</b></a>
-                <div class="nav notify-row" id="top_menu">
-                    <ul class="nav top-menu">                   
+
+        <body>
+            <section id="container">
+            <header class="header black-bg">
+                <div class="sidebar-toggle-box">
+                    <div class="fa fa-bars tooltips" data-placement="right" ></div>
+                </div>
+                <a href="index.html"class="logo"><b>La Nourriture</b></a>
+                    <div class="nav notify-row" id="top_menu">
+                        <ul class="nav top-menu">                   
+                        </ul>
+                    </div>
+            </header>
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                    <p class="centered">
+                        <a href="profile.html">
+                            <img src="assets/img/ui-sam.jpg" class="img-circle" width="150">
+                        </a>
+                    </p>
+                    <li class="sub-menu">
+                        <a href="index.html" >
+                            <i class="fas fa-utensils"></i>
+                            <span>Cardápio</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="pedidos.html" >
+                            <i class="fas fa-shopping-basket"></i>
+                            <span>Pedido</span>
+                        </a>
+                    </li>
                     </ul>
                 </div>
-        </header>
-        <aside>
-            <div id="sidebar"  class="nav-collapse ">
-                <ul class="sidebar-menu" id="nav-accordion">
-                <p class="centered">
-                    <a href="profile.html">
-                        <img src="assets/img/ui-sam.jpg" class="img-circle" width="150">
-                    </a>
-                </p>
-                <li class="sub-menu">
-                    <a href="index.html" >
-                        <i class="fas fa-utensils"></i>
-                        <span>Cardápio</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="pedidos.html" >
-                        <i class="fas fa-shopping-basket"></i>
-                        <span>Pedido</span>
-                    </a>
-                </li>
-                </ul>
-            </div>
-        </aside>
-        <section id="main-content">
-            <section class="wrapper">
-                <div class="row">
-                    <div class="col-lg-12 main-chart">
-                        <section id="main-menu" class="menu-cart scroll-reveal">
-                            <div class="container">
-                                <h1 class="header-txt">PEDIDO</h1>
-                                <div class="divider">
-                                    <?xml version="1.0" encoding="utf-8"?>
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
-                                        <style type="text/css">
-                                            .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
-                                        </style>
-                                        <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5 
-                                            717,171.5 "/>
-                                        <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9 
-                                            1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
-                                        <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
-                                        <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
-                                        <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
-                                    </svg>
-                                </div>
-                                <ul class="menu-navigation" data-tabs data-match-height="true" id="example-tabs">
-                                    <li class="tabs-title is-active">
-                                        <a class="m-anim" data-tabs-target="panel1" href="#panel1" aria-selected="true" data-text="Starters">Dados do pedido</a>
-                                    </li>
-                                </ul>
+            </aside>
+            <section id="main-content">
+                <section class="wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 main-chart">
+                            <section id="main-menu" class="menu-cart scroll-reveal">
+                                <div class="container">
+                                    <h1 class="header-txt">PEDIDO</h1>
+                                    <div class="divider">
+                                        <?xml version="1.0" encoding="utf-8"?>
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1930 255.5" style="enable-background:new 0 0 1930 255.5;" xml:space="preserve">
+                                            <style type="text/css">
+                                                .st0{fill:none;stroke:#3c3c3c;stroke-width:10;stroke-linecap:square;stroke-miterlimit:10;}
+                                            </style>
+                                            <polyline class="st0" points="1224,171.8 1181.3,171.8 1139.2,129.6 1065,203.9 970.5,110.4 876,203.6 801.8,129.4 759.7,171.5 
+                                                717,171.5 "/>
+                                            <polyline class="st0" points="5,131.5 757.3,131.5 801.8,176.1 885.9,91.9 868.3,74.2 831.5,111 870.4,149.9 970.2,50.2 1070,149.9 
+                                                1108.8,111 1072.1,74.2 1054.4,91.9 1138.5,176.1 1183.1,131.5 1925,131.5 "/>
+                                            <rect x="921.9" y="26.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 231.426 707.2043)" class="st0" width="95" height="95"/>
+                                            <rect x="921.9" y="99.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 179.8072 728.5855)" class="st0" width="95" height="95"/>
+                                            <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
+                                        </svg>
+                                    </div>
+                                    <ul class="menu-navigation" data-tabs data-match-height="true" id="example-tabs">
+                                        <li class="tabs-title is-active">
+                                            <a class="m-anim" data-tabs-target="panel1" href="#panel1" aria-selected="true" data-text="Starters">Dados do pedido</a>
+                                        </li>
+                                    </ul>
 
-                                <div class="tabs-content" data-tabs-content="example-tabs">
-                                    <div class="tabs-panel is-active" id="panel1">
-                                        <div class="menu-content">
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>Status</span></td>
-                                                        <td><span></span></td>
-                                                        <div class="center">
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Em andamento</td>
-                                                    </tr>
-                                                </table>
+                                    <div class="tabs-content" data-tabs-content="example-tabs">
+                                        <div class="tabs-panel is-active" id="panel1">
+                                            <div class="menu-content">
+                                                <div class="menu-section">
+                                                    <table>
+                                                        <tr>
+                                                            <td><span>Status</span></td>
+                                                            <td><span></span></td>
+                                                            <div class="center">
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Em andamento</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                        </div>
-                                 <div class="tabs-content" data-tabs-content="example-tabs">
-                                    <div class="tabs-panel is-active" id="panel1">
-                                        <div class="menu-content">
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>Tempo Estimado</span></td>
-                                                        <td><span></span></td>
-                                                        <div class="center">
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Vinte minutos</td>
-                                                    </tr>
-                                                </table>
+                                            </div>
+                                     <div class="tabs-content" data-tabs-content="example-tabs">
+                                        <div class="tabs-panel is-active" id="panel1">
+                                            <div class="menu-content">
+                                                <div class="menu-section">
+                                                    <table>
+                                                        <tr>
+                                                            <td><span>Tempo Estimado</span></td>
+                                                            <td><span></span></td>
+                                                            <div class="center">
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Vinte minutos</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                        </div>
-                                 <div class="tabs-content" data-tabs-content="example-tabs">
-                                    <div class="tabs-panel is-active" id="panel1">
-                                        <div class="menu-content">
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>Garçom responsável</span></td>
-                                                        <td><span></span></td>
-                                                        <div class="center">
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jarbas Soares</td>
-                                                    </tr>
-                                                </table>
+                                            </div>
+                                     <div class="tabs-content" data-tabs-content="example-tabs">
+                                        <div class="tabs-panel is-active" id="panel1">
+                                            <div class="menu-content">
+                                                <div class="menu-section">
+                                                    <table>
+                                                        <tr>
+                                                            <td><span>Garçom responsável</span></td>
+                                                            <td><span></span></td>
+                                                            <div class="center">
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jarbas Soares</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                        </div>
-                                 <div class="modal-footer centered">
-                                     <button type="button" class="btn btn-round btn-info">Visualizar Pedido</button>
-                                    <button type="button" class="btn btn-round btn-warning">Finalizar pedido</button>
+                                            </div>
+                                     <div class="modal-footer centered">
+                                         <button type="button" class="btn btn-round btn-info" a data-toggle="modal" href="#modalPedido">Visualizar Pedido </button>
+                                        <button type="button" class="btn btn-round btn-warning">Finalizar pedido</button>
 
-                                </div>
+                                    </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
                     </div>
-                </div>
-            </section>
-            
-            <footer class="site-footer">
-                <div class="text-center">
-                    2018 - For Restaurant 
-                    <a href="index.html#" class="go-top">
-                        <i class="fa fa-angle-up"></i>
-                    </a>
-                </div>
-            </footer>
-        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.2/what-input.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"></script>
-        <script src="js/app.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
-        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+                </section>
 
-        <script type="text/javascript">
-            $('.slider').slick({
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 3500,
-                arrows: false,
-                fade: true,
-                cssEase: 'linear'
-            });
+             <!-- Modal -->
+                              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalPedido" class="modal fade">
+                                  <div class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                              <h4 class="modal-title">Visualizar Pedido </h4>
+                                          </div>
+                                        <div class="modal-body">       
+                                             <tr>
+                                                <td><span>SMOKED RICOTTA TERRINE</span></td>
+                                                <td><span>$12</span></td>
+                                            </tr>
+                                            <br>
+                                            <tr>
+                                                <td><span>SMOKED RICOTTA TERRINE</span></td>
+                                                <td><span>$12</span></td>
+                                            </tr>
+                                        </div>
+                                          <div class="modal-footer centered">
+                                              <a href="index.html">
+                                              <button type="button" data-dismiss="modal" aria-hidden="true"class="btn btn-round btn-danger" type="button">Fechar</button>
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
 
-        </script>
+                <footer class="site-footer">
+                    <div class="text-center">
+                        2018 - For Restaurant 
+                        <a href="index.html#" class="go-top">
+                            <i class="fa fa-angle-up"></i>
+                        </a>
+                    </div>
+                </footer>
 
-        <script>
-            $(window).on('load', function() {
-                $("#preloader").fadeOut();
-            });
-        </script>
-        <script src="assets/js/jquery.js"></script>
-        <script src="assets/js/jquery-1.8.3.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-        <script src="assets/js/jquery.sparkline.js"></script>
-        <script src="assets/js/common-scripts.js"></script>
-        <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
-        <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
-        <script src="assets/js/sparkline-chart.js"></script>    
-        <script src="assets/js/zabuto_calendar.js"></script>	
-        
-        <script type="application/javascript">
-            $(document)
-            .ready(function () {
-                $("#date-popover").popover({html: true, trigger: "manual"});
-                $("#date-popover").hide();
-                $("#date-popover")
-                .click(function (e) {
-                    $(this).hide();
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.2/what-input.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"></script>
+            <script src="js/app.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+            <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+            <script type="text/javascript">
+                $('.slider').slick({
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 3500,
+                    arrows: false,
+                    fade: true,
+                    cssEase: 'linear'
                 });
 
-                $("#my-calendar")
-                .zabuto_calendar({
-                    action: function () {
-                        return myDateFunction(this.id, false);
-                    },
-                    action_nav: function () {
-                        return myNavFunction(this.id);
-                    },
-                    ajax: {
-                        url: "show_data.php?action=1",
-                        modal: true
-                    },
-                    legend: [
-                        {type: "text", label: "Special event", badge: "00"},
-                        {type: "block", label: "Regular event", }
-                    ]
+            </script>
+
+            <script>
+                $(window).on('load', function() {
+                    $("#preloader").fadeOut();
                 });
+            </script>
+            <script src="assets/js/jquery.js"></script>
+            <script src="assets/js/jquery-1.8.3.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+            <script src="assets/js/jquery.scrollTo.min.js"></script>
+            <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+            <script src="assets/js/jquery.sparkline.js"></script>
+            <script src="assets/js/common-scripts.js"></script>
+            <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+            <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+            <script src="assets/js/sparkline-chart.js"></script>    
+            <script src="assets/js/zabuto_calendar.js"></script>	
+
+            <script type="application/javascript">
+                $(document)
+                .ready(function () {
+                    $("#date-popover").popover({html: true, trigger: "manual"});
+                    $("#date-popover").hide();
+                    $("#date-popover")
+                    .click(function (e) {
+                        $(this).hide();
+                    });
+
+                    $("#my-calendar")
+                    .zabuto_calendar({
+                        action: function () {
+                            return myDateFunction(this.id, false);
+                        },
+                        action_nav: function () {
+                            return myNavFunction(this.id);
+                        },
+                        ajax: {
+                            url: "show_data.php?action=1",
+                            modal: true
+                        },
+                        legend: [
+                            {type: "text", label: "Special event", badge: "00"},
+                            {type: "block", label: "Regular event", }
+                        ]
+                    });
+                });
+
             });
             function myNavFunction(id) {
                 $("#date-popover").hide();
@@ -341,3 +372,4 @@
     </script>
     </body>
 </html>
+
