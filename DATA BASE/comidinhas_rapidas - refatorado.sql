@@ -13,6 +13,9 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`garcon` (
 ENGINE = InnoDB;
 
 INSERT INTO garcon (nome, gorjeta, status) VALUES ("Jose arara", 0, "ativo");
+INSERT INTO garcon (nome, gorjeta, status) VALUES ("Marcia Fagunes", 0, "ativo");
+INSERT INTO garcon (nome, gorjeta, status) VALUES ("Rafael Fernandes", 0, "ativo");
+INSERT INTO garcon (nome, gorjeta, status) VALUES ("Nícolas Moura", 0, "ativo");
 
 -- -----------------------------------------------------
 -- Table `comidinhas_rapidas`.`produto`
@@ -28,10 +31,16 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`produto` (
 ENGINE = InnoDB;
 
 INSERT INTO produto (valor, nome, descricao, tipo, quantidade) VALUES 
-(10.00, "strogonoff", "strogonoff gostosin", "alimento", 100)
-,(10.00, "batata frita", "batata frita gostosinha", "alimento", 100)
-,(10.00, "mexido", "mexido gostosin", "alimento", 100)
-,(10.00, "feijão com pão", "feijão com pão gostosin", "alimento", 100);
+(20.00, "strogonoff", "strogonoff de frango", "alimento", 100)
+,(30.00, "porção de batata frita", "batata frita com queijo", "alimento", 100)
+,(10.00, "mexido", "mexido à mineira", "alimento", 100)
+,(15.00, "porção de arroz", "arroz branco", "alimento", 100)
+,(20.00, "porção de arroz ao alho", "arroz branco com alho", "alimento", 100)
+,(9.00, "suco de laranja", "suco natural", "alimento", 100)
+,(3.00, "suco de laranja(tang)", "refresco de pozinho", "alimento", 100)
+,(12.00, "cerveja", "79% de teor de alcool", "alimento", 100)
+,(100.00, "whisky", "Fortona", "alimento", 100)
+,(4.00, "agua", "agua natural", "alimento", 100);
 
 -- -----------------------------------------------------
 -- Table `comidinhas_rapidas`.`mesa`
@@ -44,6 +53,9 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`mesa` (
 ENGINE = InnoDB;
 
 INSERT INTO mesa (nome, status) VALUES ("Mesa Principal", "livre");
+INSERT INTO mesa (nome, status) VALUES ("Mesa Grande", "livre");
+INSERT INTO mesa (nome, status) VALUES ("Mesa Média", "livre");
+INSERT INTO mesa (nome, status) VALUES ("Mesa Central", "livre");
 
 -- -----------------------------------------------------
 -- Table `comidinhas_rapidas`.`pagamento`
