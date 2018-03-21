@@ -8,34 +8,33 @@
         <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
         <title>Restaurante La Nourriture</title>
-
+        
         <link href="assets/css/bootstrap.css" rel="stylesheet">
         <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
         <link href="assets/css/zabuto_calendar.css" rel="stylesheet">
         <link href="assets/js/gritter/css/jquery.gritter.css" rel="stylesheet">
         <link href="assets/lineicons/style.css" rel="stylesheet">
         <link href="css/app.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="bootstrap.css" rel="stylesheet" id="bootstrap-css">
         <link href="assets/css/style.css" rel="stylesheet">
         <link href="assets/css/style-responsive.css" rel="stylesheet">
-        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous" rel="stylesheet"> 
-    
+
+        <link href="fontAwesome.css" rel="stylesheet"> 
+
         
-        
-        
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css"/>
-        <script src="https://unpkg.com/scrollreveal@4.0.0-beta.6"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick-theme.css"/>
+        <script src="scrollreveal.js"></script>
+        <script src="bootstrap.js"></script>
+        <script src="jquery.min.js"></script>
         <script src="assets/js/saudacao.js"></script>
 
         <script src="assets/js/chart-master/Chart.js"></script>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="html5shiv.js"></script>
+        <script src="respond.js"></script>
     </head>
 
-    <body>
+    <body onload="pegarDados()">
         <section id="container">
         <header class="header black-bg">
             <div class="sidebar-toggle-box">
@@ -92,18 +91,10 @@
                                         <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
                                     </svg>
                                 </div>
+                                <div></div>
                                 <ul class="menu-navigation" data-tabs data-match-height="true" id="example-tabs">
                                     <li class="tabs-title is-active">
-                                        <a class="m-anim" data-tabs-target="panel1" href="#panel1" aria-selected="true" data-text="Starters">Entradas</a>
-                                    </li>
-                                    <li class="tabs-title">
-                                        <a class="m-anim" data-tabs-target="panel2" href="#panel2" data-text="Main Dishes">Pratos Principais</a>
-                                    </li>
-                                    <li class="tabs-title">
-                                        <a class="m-anim" data-tabs-target="panel3" href="#panel3" data-text="Desserts">Sobremesas</a>
-                                    </li>
-                                    <li class="tabs-title">
-                                        <a class="m-anim" data-tabs-target="panel4" href="#panel4" data-text="Drinks">Bebidas</a>
+                                        <a class="m-anim" data-tabs-target="panel1" href="#panel1" data-text="Main Dishes">Pratos Principais</a>
                                     </li>
                                 </ul>
 
@@ -143,116 +134,32 @@
                                                 </button>
                                                     </div>
                                             </div>
-                                        </div>
-                                    </div>
 
+                                <div id="marginProducts">
+                                    <div class="tabs-content" data-tabs-content="example-tabs">
+                                        <div class="tabs-panel is-active" id="panel1">
 
-                                    <div class="tabs-panel" id="panel2">
-                                        <div class="menu-content">
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>PAN FRIED COURGETTE FLOWERS</span></td>
-                                                        <td><span>$13</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                                        <td><span>$12</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ricotta, shallots, cheddar, capers</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tabs-panel" id="panel3">
-                                        <div class="menu-content">
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>COURGETTE FLOWERS</span></td>
-                                                        <td><span>$16</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                                        <td><span>$12</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ricotta, shallots, cheddar, capers</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span>FRIED COURGETTE FLOWERS</span></td>
-                                                        <td><span>$16</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tabs-panel" id="panel4">
-                                        <div class="menu-content">
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>COURGETTE FLOWERS</span></td>
-                                                        <td><span>$11</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                                        <td><span>$12</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ricotta, shallots, cheddar, capers</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>COURGETTE FLOWERS</span></td>
-                                                        <td><span>$11</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>courgette flowers, goats cheese, red onion, pine nuts</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                                        <td><span>$12</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ricotta, shallots, cheddar, capers</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
+                        <section>
+                            <div class="row">
+                                    <div class="col-lg-3">
+                                    </div>
+                                <div class="col-lg-3">
+                                    <label>garçom</label>
+                                    <select id="garcom" style="font-size: 10px;"></select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label>mesa</label><br>
+                                    <select id="mesa" style="font-size: 10px;"></select>
+                                </div>
+                            </div>
+                        </section>
                          <div class="modal-footer centered">
-                            <button type="button" class="btn btn-round btn-success">Fazer pedido</button>
+                            <button type="button" class="btn btn-round btn-success" onclick="fazerPedido()">Fazer pedido</button>
                         </div>
                     </div>
                 </div>
@@ -267,12 +174,12 @@
                 </div>
             </footer>
         </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.2/what-input.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"></script>
+        <script src="jquery.js"></script>
+        <script src="what-input.js"></script>
+        <script src="foundation.js"></script>
         <script src="js/app.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
-        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+        <script type="text/javascript" src="slick.js"></script>
+        <script src="scrollreveal.min.js"></script>
 
         <script type="text/javascript">
             $('.slider').slick({
@@ -351,6 +258,160 @@
                 var nav = $("#" + id).data("navigation");
                 var to = $("#" + id).data("to");
                 console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+            }
+        </script>
+
+        <script>       
+            const pegarDados = () =>{
+                let Request1 = new XMLHttpRequest()
+                let Request2 = new XMLHttpRequest()
+                let Request3 = new XMLHttpRequest()
+
+                Request2.open("GET", "http://localhost:8000/tables", true)
+                Request2.setRequestHeader("Content-Type", "application/json");
+                Request2.send()
+                Request2.onreadystatechange = function() {
+                    if (Request2.readyState == 4 && Request2.status == 200) {
+                        var data = JSON.parse(Request2.responseText);
+                        const mesaID = document.getElementById("mesa")
+                        let mesa = `<option value="" selected>Selecione</option>`
+
+                        for(let i = 0 ; i < data.length; i++){
+                            mesa += `<option value="${data[i].id_mesa}">${data[i].nome}</option>`
+                        }
+
+                        mesaID.innerHTML = mesa
+                    }
+                }
+
+                Request3.open("GET", "http://localhost:8000/garcom", true)
+                Request3.setRequestHeader("Content-Type", "application/json");
+                Request3.send()
+                Request3.onreadystatechange = function() {
+                    if (Request3.readyState == 4 && Request3.status == 200) {
+                        var data = JSON.parse(Request3.responseText);
+                        const garcomID = document.getElementById("garcom")
+                        let garcom = `<option value="" selected>Selecione</option>`
+
+                        for(let i = 0 ; i < data.length; i++){
+                            garcom += `<option value="${data[i].id_garcon}">${data[i].nome}</option>`
+                        }
+
+                        garcomID.innerHTML = garcom
+                    }
+                }
+
+                Request1.open("GET", "http://localhost:8000/product", true)
+                Request1.setRequestHeader("Content-Type", "application/json");
+                Request1.send()
+                Request1.onreadystatechange = function() {
+                    if (Request1.readyState == 4 && Request1.status == 200) {
+                        var data = JSON.parse(Request1.responseText);
+                        console.log(data)
+                        const produtosID = document.getElementById("panel1")
+                        const productsDiv = document.getElementById("marginProducts")
+                        let produtos = `<div class="menu-content">`
+                        for(let i = 0 ; i < data.length ; i++){
+                            if((i%2 == 0)){
+                                produtos += `
+                                    <div class="menu-section">
+                                        <table>
+                                            <tr>
+                                                <td><span>${data[i].nome}</span></td>
+                                                <td><span>$${data[i].valor}</span></td>
+                                                <div class="center">
+                                            </tr>
+                                            <tr>
+                                                <td>${data[i].descricao}</td>
+                                            </tr> 
+                                        </table>
+                                        <div class="text-right">
+                                            <span></span>
+                                            <button type="button" class="btn btn-default btn-sm" onclick="addComidinha(${data[i].id_produto})"> 
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Adicionar
+                                            </button>
+                                        </div>
+                                    </div>
+                            `   
+                            }
+                        }
+
+                        for(let j = 0 ; j < data.length; j++){
+                            if (j%2 == 1){
+                                produtos += `
+                                <div class="menu-section">
+                                        <table>
+                                            <tr>
+                                                <td><span>${data[j].nome}</span></td>
+                                                <td><span>$${data[j].valor}</span></td>
+                                                <div class="center">
+                                            </tr>
+                                            <tr>
+                                                <td>${data[j].descricao}</td>
+                                            </tr> 
+                                        </table>
+                                        <div class="text-right">
+                                            <span></span>
+                                            <button type="button" class="btn btn-default btn-sm" onclick="addComidinha(${data[j].id_produto})"> 
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Adicionar
+                                            </button>
+                                        </div>
+                                    </div>
+                            `   
+                            }
+                        }
+                        produtos += `</div>`
+
+                        setTimeout(() => {
+                            console
+                            productsDiv.style = `margin-bottom: ${data.length * 40}px`
+                            produtosID.innerHTML = produtos
+                        }, 500);
+                    }
+                }
+            }
+
+            let productKeys = {}
+
+            const addComidinha = (idProduto)=>{
+                if(productKeys[idProduto]){
+                    productKeys[idProduto].qunatidade++
+                }else{
+                    productKeys[idProduto] = {
+                        id_produto: idProduto,
+                        qunatidade: 1
+                    }
+                }
+            }
+
+            const fazerPedido = () =>{
+                let Request = new XMLHttpRequest()
+                const idGarcon = document.getElementById("garcom").value
+                const idMesa = document.getElementById("mesa").value
+                const produtos = document.getElementsByName("produtos")
+
+                let request = {
+                    "id_garcon": idGarcon,
+                    "id_mesa": idMesa,
+                    "products": []
+                }	
+
+                const keys = Object.keys(productKeys)
+                for(let i = 0; i < keys.length; i++){
+                    request.products.push(productKeys[keys[i]])
+                }
+
+                Request.open("POST", "http://localhost:8000/order", true)
+                Request.setRequestHeader("Content-Type", "application/json");
+                Request.send(JSON.stringify(request))
+                Request.onreadystatechange = function() {
+                    if (Request.readyState == 4 && Request.status == 200) {
+                        var data = JSON.parse(Request.responseText);
+                        if(!data.message){
+                            alert("pedido realizado com sucesso")
+                        }
+                    }
+                }
             }
         </script>
     </body>

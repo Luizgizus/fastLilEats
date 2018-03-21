@@ -1,12 +1,12 @@
-const HttpStatus = require('http-status')
 const Queries = require("./queries")
+const PedidoProduto = require("./pedido_produto")
 
-class TablesController extends Queries {
-    constructor() {
-        super("mesa", ['nome'])
+class OrderController extends Queries {
+    constructor(){
+        super("pedido", ["garcon_id_garcon", "mesa_id_mesa"])
     }
 
-    create(params){
+    createOrder(params){
         return this.createConnectionSQL()
         .then(()=>{
             return new Promise((resolve, reject)=>{
@@ -14,19 +14,31 @@ class TablesController extends Queries {
                     if(err){
                         reject(err)
                     }else{
-                        console.log(params)
-                        const sql = `INSERT INTO ${this.table} (${this.strColumns}) VALUES ("${params.nome_mesa}")`
+                        const sql = `INSERT INTO ${this.table} (${this.strColumns}) VALUES ("${params.id_garcon}", "${params.id_mesa}")`
 
                         this.conn.query(sql,(err, result)=>{
                             if(err){
                                 reject(err)
                             }else{
+                                console.log(sql)
                                 resolve(result)
                             }
                         })
                     }
                 })
             })
+        })
+        .then((res)=>{
+            const productStack = params.products
+            let pedidoProduto = null
+            let responses = []
+            for(let i = 0; i < productStack.length; i++){
+                console.log("entrei")
+                pedidoProduto = new PedidoProduto()
+                responses.push(pedidoProduto.create(productStack[i], res.insertId))
+            }
+
+            return res
         })
         .then((res)=>{
             this.conn.end()
@@ -39,4 +51,5 @@ class TablesController extends Queries {
     }
 }
 
-module.exports = TablesController;
+
+module.exports = OrderController

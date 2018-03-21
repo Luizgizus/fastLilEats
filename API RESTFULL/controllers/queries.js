@@ -18,38 +18,6 @@ class Query{
         })
     }
 
-    create(params){
-        return this.createConnectionSQL()
-        .then(()=>{
-            return new Promise((resolve, reject)=>{
-                this.conn.connect((err)=>{
-                    if(err){
-                        reject(err)
-                    }else{
-                        console.log(params)
-                        const sql = `INSERT INTO ${this.table} (${this.strColumns}) VALUES ("${params.nome_mesa}")`
-    
-                        this.conn.query(sql,(err, result)=>{
-                            if(err){
-                                reject(err)
-                            }else{
-                                resolve(result)
-                            }
-                        })
-                    }
-                })
-            })
-        })
-        .then((res)=>{
-            this.conn.end()
-            return Promise.resolve(res)
-        })
-        .catch((err)=>{
-            this.conn.end()
-            return Promise.reject(err)
-        })
-    }
-
     update(params, id){
         return this.createConnectionSQL()
         .then(()=>{
@@ -132,34 +100,6 @@ class Query{
         .catch((err)=>{
             this.conn.end()
             return Promise.reject(err)
-        })
-
-
-
-
-
-
-        return this.conn.connect((err)=>{
-            return new Promise((reject, resolve)=>{
-                if(err){
-                    reject(err)
-                }else{
-                    resolve()
-                }
-            })
-        })
-        .then(()=>{
-            const sql = `SELECT * FROM ${this.table} WHERE id_${this.table} = ${id}`
-
-            this.conn.query(sql, (err, result, fields)=>{
-                return new Promise((reject, resolve)=>{
-                    if(err){
-                        reject(err)
-                    }else{
-                        resolve(result)
-                    }
-                })
-            })
         })
     }
 
