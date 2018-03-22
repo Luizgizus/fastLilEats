@@ -91,74 +91,39 @@
                                         <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
                                     </svg>
                                 </div>
-                                <div></div>
+                            </div>
                                 <ul class="menu-navigation" data-tabs data-match-height="true" id="example-tabs">
                                     <li class="tabs-title is-active">
                                         <a class="m-anim" data-tabs-target="panel1" href="#panel1" data-text="Main Dishes">Pratos Principais</a>
                                     </li>
                                 </ul>
-
-                                <div class="tabs-content" data-tabs-content="example-tabs">
-                                    <div class="tabs-panel is-active" id="panel1">
-                                        <div class="menu-content">
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>SMOKED RICOTTA TERRINE</span></td>
-                                                        <td><span>$12</span></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ricotta, shallots, cheddar, capers</td>
-                                                    </tr> 
-                                                </table>
-                                                <div class="text-right">
-                                                 <button type="button" class="btn btn-default btn-sm"> 
-                                                    <span class="glyphicon glyphicon-shopping-cart"></span> Adicionar
-                                                </button>
-                                                    </div>
-                                            </div>
-                                            <div class="menu-section">
-                                                <table>
-                                                    <tr>
-                                                        <td><span>SAMPHIRE FRITTERS WITH FENNEL CEVICHE </span></td>
-                                                        <td><span>$19</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>fresh samphire, plain flour, cornflower, eggs, fennel</td>
-                                                    </tr>
-                                                </table>
-                                                <div class="text-right">
-                                                 <button type="button" class="btn btn-default btn-sm"> 
-                                                    <span class="glyphicon glyphicon-shopping-cart"></span> Adicionar
-                                                </button>
-                                                    </div>
-                                            </div>
-
+                                <div class="row">
+                                    <div class="col-lg-5 col-lg-offset-4">
+                                        <label>Seu Nome</label>
+                                        <input type="text" placeholder="Digite o seu nome..." id="nomeCliente">
+                                    </div>
+                                </div>
                                 <div id="marginProducts">
                                     <div class="tabs-content" data-tabs-content="example-tabs">
                                         <div class="tabs-panel is-active" id="panel1">
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section>
-                            <div class="row">
-                                    <div class="col-lg-3">
-                                    </div>
-                                <div class="col-lg-3">
-                                    <label>garçom</label>
-                                    <select id="garcom" style="font-size: 10px;"></select>
-                                </div>
-                                <div class="col-lg-3">
-                                    <label>mesa</label><br>
-                                    <select id="mesa" style="font-size: 10px;"></select>
-                                </div>
+                        <div class="row">
+                            <div class="col-lg-3">
                             </div>
-                        </section>
-                         <div class="modal-footer centered">
+                            <div class="col-lg-3">
+                                <label>garçom</label>
+                                <select id="garcom" style="font-size: 10px;"></select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>mesa</label><br>
+                                <select id="mesa" style="font-size: 10px;"></select>
+                            </div>
+                        </div>
+                        <div class="modal-footer centered">
                             <button type="button" class="btn btn-round btn-success" onclick="fazerPedido()">Fazer pedido</button>
                         </div>
                     </div>
@@ -327,7 +292,7 @@
                                         </table>
                                         <div class="text-right">
                                             <span></span>
-                                            <button type="button" class="btn btn-default btn-sm" onclick="addComidinha(${data[i].id_produto})"> 
+                                            <button type="button" class="btn btn-default btn-sm" onclick="addComidinha(${data[i].id_produto}, ${data[i].tempo_estimado})"> 
                                                 <span class="glyphicon glyphicon-shopping-cart"></span> Adicionar
                                             </button>
                                         </div>
@@ -352,7 +317,7 @@
                                         </table>
                                         <div class="text-right">
                                             <span></span>
-                                            <button type="button" class="btn btn-default btn-sm" onclick="addComidinha(${data[j].id_produto})"> 
+                                            <button type="button" class="btn btn-default btn-sm" onclick="addComidinha(${data[j].id_produto}, ${data[j].tempo_estimado})"> 
                                                 <span class="glyphicon glyphicon-shopping-cart"></span> Adicionar
                                             </button>
                                         </div>
@@ -364,7 +329,7 @@
 
                         setTimeout(() => {
                             console
-                            productsDiv.style = `margin-bottom: ${data.length * 40}px`
+                            productsDiv.style = `margin-bottom: ${data.length * 32}px`
                             produtosID.innerHTML = produtos
                         }, 500);
                     }
@@ -372,14 +337,17 @@
             }
 
             let productKeys = {}
+            let tempoEstimadoTotal = 0
 
-            const addComidinha = (idProduto)=>{
+            const addComidinha = (idProduto, tempoEstimado)=>{
+                tempoEstimadoTotal += tempoEstimado
                 if(productKeys[idProduto]){
                     productKeys[idProduto].qunatidade++
                 }else{
                     productKeys[idProduto] = {
                         id_produto: idProduto,
-                        qunatidade: 1
+                        qunatidade: 1,
+                        tempoEstimado: tempoEstimado
                     }
                 }
             }
@@ -388,11 +356,13 @@
                 let Request = new XMLHttpRequest()
                 const idGarcon = document.getElementById("garcom").value
                 const idMesa = document.getElementById("mesa").value
-                const produtos = document.getElementsByName("produtos")
+                const nomeCliente = document.getElementById("nomeCliente").value
 
                 let request = {
                     "id_garcon": idGarcon,
                     "id_mesa": idMesa,
+                    "tempoEstimadoTotal" : tempoEstimadoTotal,
+                    "nomeCliente": nomeCliente,
                     "products": []
                 }	
 

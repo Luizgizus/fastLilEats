@@ -4,7 +4,18 @@ class RouteTable{
   constructor(app){
     this.orderController = new OrderController()
     this.app = app
-    
+    this.app.route('/order/byName')
+    .post((req, res) => {
+      this.orderController.getOrderBbyName(req.body.clientName)
+      .then(response => {
+        res.status(200)
+        res.json(response)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    })
+
     this.app.route('/order')
     .get((req, res) => {
       this.orderController.getAll()

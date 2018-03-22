@@ -17,6 +17,7 @@ INSERT INTO garcon (nome, gorjeta, status) VALUES ("Marcia Fagunes", 0, "ativo")
 INSERT INTO garcon (nome, gorjeta, status) VALUES ("Rafael Fernandes", 0, "ativo");
 INSERT INTO garcon (nome, gorjeta, status) VALUES ("Nícolas Moura", 0, "ativo");
 
+
 -- -----------------------------------------------------
 -- Table `comidinhas_rapidas`.`produto`
 -- -----------------------------------------------------
@@ -26,21 +27,22 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`produto` (
   `nome` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(200) NOT NULL,
   `tipo` VARCHAR(45) NOT NULL,
-  `quantidade` INT NOT NULL,
+  `tempo_estimado` INT NOT NULL,
   PRIMARY KEY (`id_produto`))
 ENGINE = InnoDB;
 
-INSERT INTO produto (valor, nome, descricao, tipo, quantidade) VALUES 
-(20.00, "strogonoff", "strogonoff de frango", "alimento", 100)
-,(30.00, "porção de batata frita", "batata frita com queijo", "alimento", 100)
-,(10.00, "mexido", "mexido à mineira", "alimento", 100)
-,(15.00, "porção de arroz", "arroz branco", "alimento", 100)
-,(20.00, "porção de arroz ao alho", "arroz branco com alho", "alimento", 100)
-,(9.00, "suco de laranja", "suco natural", "alimento", 100)
-,(3.00, "suco de laranja(tang)", "refresco de pozinho", "alimento", 100)
-,(12.00, "cerveja", "79% de teor de alcool", "alimento", 100)
-,(100.00, "whisky", "Fortona", "alimento", 100)
-,(4.00, "agua", "agua natural", "alimento", 100);
+INSERT INTO produto (valor, nome, descricao, tipo, tempo_estimado) VALUES 
+(20.00, "strogonoff", "strogonoff de frango", "alimento", 40)
+,(30.00, "porção de batata frita", "batata frita com queijo", "alimento", 20)
+,(10.00, "mexido", "mexido à mineira", "alimento", 30)
+,(15.00, "porção de arroz", "arroz branco", "alimento", 30)
+,(20.00, "porção de arroz ao alho", "arroz branco com alho", "alimento", 30)
+,(9.00, "suco de laranja", "suco natural", "alimento", 10)
+,(3.00, "suco de laranja(tang)", "refresco de pozinho", "alimento", 10)
+,(12.00, "cerveja", "79% de teor de alcool", "alimento", 10)
+,(100.00, "whisky", "Fortona", "alimento", 10)
+,(4.00, "agua", "agua natural", "alimento", 10);
+
 
 -- -----------------------------------------------------
 -- Table `comidinhas_rapidas`.`mesa`
@@ -56,6 +58,7 @@ INSERT INTO mesa (nome, status) VALUES ("Mesa Principal", "livre");
 INSERT INTO mesa (nome, status) VALUES ("Mesa Grande", "livre");
 INSERT INTO mesa (nome, status) VALUES ("Mesa Média", "livre");
 INSERT INTO mesa (nome, status) VALUES ("Mesa Central", "livre");
+
 
 -- -----------------------------------------------------
 -- Table `comidinhas_rapidas`.`pagamento`
@@ -76,7 +79,10 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`pedido` (
   `id_pedido` INT NOT NULL AUTO_INCREMENT,
   `garcon_id_garcon` INT NOT NULL,
   `mesa_id_mesa` INT NOT NULL,
-  `pagamento_id_pagamento` INT,
+  `pagamento_id_pagamento` INT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `tempoEsperaTotal` INT NOT NULL,
+  `nomeCliente` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id_pedido`),
   INDEX `fk_pedido_garcon_idx` (`garcon_id_garcon` ASC),
   INDEX `fk_pedido_mesa1_idx` (`mesa_id_mesa` ASC),
@@ -122,7 +128,7 @@ ENGINE = InnoDB;
 -- Table `comidinhas_rapidas`.`pedido_produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`pedido_produto` (
-  `id_pedido_produto` int NOT NULL AUTO_INCREMENT,
+  `id_pedido_produto` INT NOT NULL AUTO_INCREMENT,
   `pedido_id_pedido` INT NOT NULL,
   `produto_id_produto` INT NOT NULL,
   `quantidade` INT NOT NULL,
