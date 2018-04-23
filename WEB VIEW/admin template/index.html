@@ -70,7 +70,7 @@
           
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
         </li>
       </ul>
     </div>
@@ -84,6 +84,8 @@
         </li>
         <li class="breadcrumb-item active">Produtos em estoque</li>
       </ol>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adicionarProduto">Adicionar novo produto</button>
+    </br></br>
       <!-- Icon Cards-->
       <table class="table">
         <thead>
@@ -118,7 +120,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright © La Nourriture 2018</small>
         </div>
       </div>
     </footer>
@@ -140,6 +142,41 @@
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="adicionarProduto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome-produto">
+              </div>
+              <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Tipo:</label>
+                  <input type="text" class="form-control" id="tipo-produto">
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Quantidade:</label>
+                    <input type="text" class="form-control" id="qntd">
+                  </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-success">Salvar</button>
           </div>
         </div>
       </div>
