@@ -28,31 +28,31 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="produto.html">
             <i class="fa fa-fw fa-barcode"></i>
             <span class="nav-link-text">Produtos</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="pedido.html">
             <i class="fa fa-fw fa-shopping-basket"></i>
             <span class="nav-link-text">Pedidos</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="garcom.html">
             <i class="fa fa-fw fa-id-badge"></i>
             <span class="nav-link-text">Garçom</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="cliente.html">
             <i class="fa fa-fw fa-users"></i>
             <span class="nav-link-text">Clientes</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="mesa.html">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Mesas</span>
           </a>
@@ -80,40 +80,43 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Produtos</a>
+          <a href="#">Pedidos</a>
         </li>
-        <li class="breadcrumb-item active">Produtos em estoque</li>
+        <li class="breadcrumb-item active">Pedidos do dia</li>
       </ol>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adicionarProduto">Adicionar novo produto</button>
-    </br></br>
+      
       <!-- Icon Cards-->
       <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Quantidade</th>
+            <th scope="col">Mesa</th>
+            <th scope="col">Horário do pedido</th>
+            <th scope="col">Garçom Responsável</th>
+            <th scope="col">Pedidos</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Arroz</td>
-            <td>Comida</td>
-            <td>25 (Kg)</td>
+            <td>Mesa 1 </td>
+            <td>20:00</td>
+            <td>João</td>
+            <td><i class="fa fa-fw fa-list-alt"></i></td>
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Fanta</td>
-            <td>Bebida</td>
-            <td>40 (L)</td>
+            <td>Mesa 2</td>
+            <td>20:15</td>
+            <td>Marina</td>
+            <td><i class="fa fa-fw fa-list-alt"></i></td>
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Carne</td>
-            <td>Comida</td>
-            <td>20 (Kg)</td>
+            <td>Mesa 3</td>
+            <td>20:01</td>
+            <td>Elias</td>
+            <td><i class="fa fa-fw fa-list-alt"></i></td>
           </tr>
         </tbody>
       </table>
@@ -148,39 +151,7 @@
     </div>
 
     
-    <!-- Modal -->
-    <div class="modal fade" id="adicionarProduto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produto</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Nome:</label>
-                <input type="text" class="form-control" id="nome-produto">
-              </div>
-              <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Tipo:</label>
-                  <input type="text" class="form-control" id="tipo-produto">
-                </div>
-                <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Quantidade:</label>
-                    <input type="text" class="form-control" id="qntd">
-                  </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-success">Salvar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
