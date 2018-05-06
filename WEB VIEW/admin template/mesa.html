@@ -1,164 +1,322 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>La Nourriture</title>
-  <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>La Nourriture</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+  </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">La Nourriture</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="produto.html">
-            <i class="fa fa-fw fa-barcode"></i>
-            <span class="nav-link-text">Produtos</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="pedido.html">
-            <i class="fa fa-fw fa-shopping-basket"></i>
-            <span class="nav-link-text">Pedidos</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="garcom.html">
-            <i class="fa fa-fw fa-id-badge"></i>
-            <span class="nav-link-text">Garçom</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="cliente.html">
-            <i class="fa fa-fw fa-users"></i>
-            <span class="nav-link-text">Clientes</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="mesa.html">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Mesas</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="content-wrapper">
-    <div class="container-fluid">
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Mesas</a>
-        </li>
-        <li class="breadcrumb-item active">Status das mesas</li>
-      </ol>
-      
-      <!-- Icon Cards-->
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Número da mesa</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mesa 1 </td>
-            <td>Ocupado</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Mesa 2</td>
-            <td>Disponível</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Mesa 3</td>
-            <td>Ocupado</td>
-          </tr>
-        </tbody>
-      </table>
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © La Nourriture 2018</small>
-        </div>
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="getAll()">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="index.html">La Nourriture</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <a class="nav-link" href="produto.html">
+              <i class="fa fa-fw fa-barcode"></i>
+              <span class="nav-link-text">Produtos</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <a class="nav-link" href="pedido.html">
+              <i class="fa fa-fw fa-shopping-basket"></i>
+              <span class="nav-link-text">Pedidos</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="garcom.html">
+              <i class="fa fa-fw fa-id-badge"></i>
+              <span class="nav-link-text">Garçom</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+            <a class="nav-link" href="cliente.html">
+              <i class="fa fa-fw fa-users"></i>
+              <span class="nav-link-text">Clientes</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+            <a class="nav-link" href="mesa.html">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">Mesas</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+          <li class="nav-item">
+            <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa fa-fw fa-sign-out"></i>Sair</a>
+            </li>
+        </ul>
       </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+    </nav>
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Mesas</a>
+          </li>
+          <li class="breadcrumb-item active">Status das mesas</li>
+        </ol>
+
+        <div class="row">
+          <div class="col-12 text-right mb-2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adicionarMesa">Adicionar nova mesa</button>
           </div>
         </div>
-      </div>
-    </div>
 
-    
-   
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.min.js"></script>
-  </div>
-</body>
+        <!-- Icon Cards-->
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome da mesa</th>
+              <th scope="col">Status</th>
+              <th scope="col" class="text-center">Ação</th>
+            </tr>
+          </thead>
+          <tbody id="mesaTable"></tbody>
+        </table>
+        <footer class="sticky-footer">
+          <div class="container">
+            <div class="text-center">
+              <small>Copyright © La Nourriture 2018</small>
+            </div>
+          </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fa fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin.min.js"></script>
+        <!-- Custom scripts for this page-->
+        <script src="js/sb-admin-datatables.min.js"></script>
+        <script src="js/sb-admin-charts.min.js"></script>
+      </div>
+
+      <div class="modal fade" id="adicionarMesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adicionar Mesa</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Nome:</label>
+                  <input type="text" class="form-control" id="criarNomeMesa">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="closeModalCreate" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-success" onclick="create()">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="editarMesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adicionar Produto</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Nome:</label>
+                  <input type="text" class="form-control" id="editarNomeMesa">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="closeModalEdit" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-success" onclick="update()">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const create = () => {
+          let nome = document.getElementById('criarNomeMesa').value
+          let Request = new XMLHttpRequest()
+
+          const request = {
+            nome_mesa: nome
+          }
+
+          Request.open("POST", "http://localhost:8000/tables", true)
+          Request.setRequestHeader("Content-Type", "application/json");
+          Request.send(JSON.stringify(request))
+          Request.onreadystatechange = function () {
+            if (Request.readyState == 4 && Request.status == 200) {
+              var data = Request.responseText;
+              console.log(data);
+              document.getElementById("closeModalCreate").click()
+              getAll()
+            }
+          }
+        }
+
+        const update = () => {
+          let nome = document.getElementById("editarNomeMesa").value
+          let Request = new XMLHttpRequest()
+
+          const request = {
+            nome: nome
+          }
+
+          Request.open("PUT", "http://localhost:8000/tables/" + actualId, true)
+          Request.setRequestHeader("Content-Type", "application/json");
+          Request.send(JSON.stringify(request))
+          Request.onreadystatechange = function () {
+            if (Request.readyState == 4 && Request.status == 200) {
+              var data = Request.responseText;
+              document.getElementById("closeModalEdit").click()
+              getAll()
+            }
+          }
+        }
+
+
+        const del = (id) => {
+          let Request = new XMLHttpRequest()
+
+          Request.open("DELETE", "http://localhost:8000/tables/" + id, true)
+          Request.setRequestHeader("Content-Type", "application/json");
+          Request.send()
+          Request.onreadystatechange = function () {
+            if (Request.readyState == 4 && Request.status == 200) {
+              var data = Request.responseText;
+              getAll()
+            }
+          }
+        }
+
+        const getAll = () => {
+          let Request = new XMLHttpRequest()
+
+          Request.open("GET", "http://localhost:8000/tables/", true)
+          Request.setRequestHeader("Content-Type", "application/json");
+          Request.send()
+          Request.onreadystatechange = function () {
+            if (Request.readyState == 4 && Request.status == 200) {
+              var data = JSON.parse(Request.responseText)
+              const tableMesa = document.getElementById("mesaTable")
+              console.log(data)
+              let dataTable = ``
+              if (data && data.length) {
+                for (var i = 0; i < data.length; i++) {
+                  dataTable += `
+                    <tr>
+                      <td>${data[i].id_mesa}</td>
+                      <td>${data[i].nome}</td>
+                      <td>${data[i].status}</td>
+                      <td class="text-center">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#editarMesa" onclick="getById(${data[i].id_mesa})">
+                          <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-danger" onclick="del(${data[i].id_mesa})">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  `
+                }
+              } else {
+                dataTable = `
+                  <tr>
+                    <td colspan="3">Nenhuma mesa encontrada</td>
+                  </tr>
+                `
+              }
+              tableMesa.innerHTML = dataTable
+            }
+          }
+        }
+
+        const getById = (id) => {
+          actualId = id
+          let Request = new XMLHttpRequest()
+
+          Request.open("GET", "http://localhost:8000/tables/" + id, true)
+          Request.setRequestHeader("Content-Type", "application/json");
+          Request.send()
+          Request.onreadystatechange = function () {
+            if (Request.readyState == 4 && Request.status == 200) {
+              var data = JSON.parse(Request.responseText);
+              console.log(data);
+              document.getElementById("editarNomeMesa").value = data[0].nome
+            }
+          }
+        }
+      </script>
+  </body>
 
 </html>
