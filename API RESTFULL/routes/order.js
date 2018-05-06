@@ -27,6 +27,8 @@ class RouteTable {
             console.log(err)
           })
       })
+
+    this.app.route('/order')
       .post((req, res) => {
         this.orderController.createOrder(req.body)
           .then(response => {
