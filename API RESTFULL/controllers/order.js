@@ -102,7 +102,18 @@ class OrderController extends Queries {
                         if (err) {
                             reject(err)
                         } else {
-                            const sql = `SELECT * FROM ${this.table} WHERE status != 'encerrado' ORDER BY id_${this.table}`
+                            const sql = `SELECT 
+                                         p.id_pedido,
+                                         p.status 'statusPedido',
+                                         p.tempoEsperaTotal,
+                                         p.nomeCliente,
+                                         m.nome 'nomeMesa',
+                                         g.nome 'nomeGarcon'
+                                         FROM ${this.table} as p
+                                         JOIN mesa as m ON mesa_id_mesa = m.id_mesa
+                                         JOIN garcon as g ON garcon_id_garcon = g.id_garcon
+                                         WHERE p.status != 'encerrado'
+                                         ORDER BY id_${this.table}`
 
                             this.conn.query(sql, (err, result, fields) => {
                                 if (err) {

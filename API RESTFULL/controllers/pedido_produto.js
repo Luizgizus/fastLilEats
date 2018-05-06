@@ -58,7 +58,7 @@ class PedidoProdutoController extends Queries {
                                         FROM pedido_produto as pp
                                         join produto as p on p.id_produto = pp.produto_id_produto
                                         where pedido_id_pedido = ${id}
-                                        order by p.name`
+                                        order by p.nome`
 
                             this.conn.query(sql, (err, result, fields) => {
                                 if (err) {
