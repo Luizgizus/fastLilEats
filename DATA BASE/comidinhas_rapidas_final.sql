@@ -17,7 +17,6 @@ INSERT INTO garcon (nome, gorjeta, status) VALUES ("Marcia Fagunes", 0, "ativo")
 INSERT INTO garcon (nome, gorjeta, status) VALUES ("Rafael Fernandes", 0, "ativo");
 INSERT INTO garcon (nome, gorjeta, status) VALUES ("Nícolas Moura", 0, "ativo");
 
-
 -- -----------------------------------------------------
 -- Table `comidinhas_rapidas`.`produto`
 -- -----------------------------------------------------
@@ -78,28 +77,28 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`pedido` (
   `id_pedido` INT NOT NULL AUTO_INCREMENT,
   `garcon_id_garcon` INT NOT NULL,
-  `mesa_id_mesa` INT NOT NULL,
-  `pagamento_id_pagamento` INT NULL,
   `status` VARCHAR(45) NOT NULL,
   `tempoEsperaTotal` INT NOT NULL,
-  `nomeCliente` VARCHAR(50) NOT NULL,
+  `garcon_id_garcon1` INT NOT NULL,
+  `pagamento_id_pagamento` INT NOT NULL,
+  `mesa_id_mesa` INT NOT NULL,
   PRIMARY KEY (`id_pedido`),
-  INDEX `fk_pedido_garcon_idx` (`garcon_id_garcon` ASC),
-  INDEX `fk_pedido_mesa1_idx` (`mesa_id_mesa` ASC),
+  INDEX `fk_pedido_garcon_idx` (`garcon_id_garcon1` ASC),
   INDEX `fk_pedido_pagamento1_idx` (`pagamento_id_pagamento` ASC),
+  INDEX `fk_pedido_mesa1_idx` (`mesa_id_mesa` ASC),
   CONSTRAINT `fk_pedido_garcon`
-    FOREIGN KEY (`garcon_id_garcon`)
+    FOREIGN KEY (`garcon_id_garcon1`)
     REFERENCES `comidinhas_rapidas`.`garcon` (`id_garcon`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_pedido_mesa1`
-    FOREIGN KEY (`mesa_id_mesa`)
-    REFERENCES `comidinhas_rapidas`.`mesa` (`id_mesa`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pedido_pagamento1`
     FOREIGN KEY (`pagamento_id_pagamento`)
     REFERENCES `comidinhas_rapidas`.`pagamento` (`id_pagamento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pedido_mesa1`
+    FOREIGN KEY (`mesa_id_mesa`)
+    REFERENCES `comidinhas_rapidas`.`mesa` (`id_mesa`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -112,13 +111,28 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`cliente` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `cpf` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_cliente`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `comidinhas_rapidas`.`pagamento_cliente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`pagamento_cliente` (
   `pagamento_id_pagamento` INT NOT NULL,
-  `pagamento_pedido_id_pedido` INT NOT NULL,
-  PRIMARY KEY (`id_cliente`),
-  INDEX `fk_cliente_pagamento1_idx` (`pagamento_id_pagamento` ASC, `pagamento_pedido_id_pedido` ASC),
-  CONSTRAINT `fk_cliente_pagamento1`
+  `cliente_id_cliente` INT NOT NULL,
+  `id_pagamento_cliente` INT NOT NULL AUTO_INCREMENT,
+  INDEX `fk_pagamento_has_cliente_cliente1_idx` (`cliente_id_cliente` ASC),
+  INDEX `fk_pagamento_has_cliente_pagamento1_idx` (`pagamento_id_pagamento` ASC),
+  PRIMARY KEY (`id_pagamento_cliente`),
+  CONSTRAINT `fk_pagamento_has_cliente_pagamento1`
     FOREIGN KEY (`pagamento_id_pagamento`)
     REFERENCES `comidinhas_rapidas`.`pagamento` (`id_pagamento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pagamento_has_cliente_cliente1`
+    FOREIGN KEY (`cliente_id_cliente`)
+    REFERENCES `comidinhas_rapidas`.`cliente` (`id_cliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -128,10 +142,9 @@ ENGINE = InnoDB;
 -- Table `comidinhas_rapidas`.`pedido_produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`pedido_produto` (
-  `id_pedido_produto` INT NOT NULL AUTO_INCREMENT,
   `pedido_id_pedido` INT NOT NULL,
   `produto_id_produto` INT NOT NULL,
-  `quantidade` INT NOT NULL,
+  `id_pedido_produto` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_pedido_produto`),
   INDEX `fk_pedido_has_produto_produto1_idx` (`produto_id_produto` ASC),
   INDEX `fk_pedido_has_produto_pedido1_idx` (`pedido_id_pedido` ASC),
@@ -146,3 +159,8 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`pedido_produto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

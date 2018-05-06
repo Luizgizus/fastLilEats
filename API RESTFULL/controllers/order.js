@@ -4,7 +4,7 @@ const Garcom = require("./garcom")
 
 class OrderController extends Queries {
     constructor() {
-        super("pedido", ["garcon_id_garcon", "mesa_id_mesa", "status", "tempoEsperaTotal", "nomeCliente"])
+        super("pedido", ["garcon_id_garcon", "mesa_id_mesa", "status", "tempoEsperaTotal"])
     }
 
     createOrder(params) {

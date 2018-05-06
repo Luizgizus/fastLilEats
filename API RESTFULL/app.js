@@ -3,6 +3,7 @@ const express = require('express')
 const TablesRouter = require('./routes/tables')
 const OrderRouter = require('./routes/order')
 const ProducRouter = require('./routes/product')
+const OrderProducRouter = require('./routes/pedidoProduto')
 const GarcomRouter = require('./routes/garcom')
 const Config = require('./config/config')
 
@@ -22,10 +23,12 @@ class App {
             res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS")
             next()
         })
+
         this.app.use(bodyParser.json())
         this.tablesRouter = new TablesRouter(this.app)
         this.orderRouter = new OrderRouter(this.app)
         this.productRouter = new ProducRouter(this.app)
+        this.orderProducRouter = new OrderProducRouter(this.app)
         this.garcomRouter = new GarcomRouter(this.app)
     }
 }
