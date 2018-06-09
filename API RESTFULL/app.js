@@ -6,6 +6,7 @@ const ProducRouter = require('./routes/product')
 const OrderProducRouter = require('./routes/pedidoProduto')
 const GarcomRouter = require('./routes/garcom')
 const Config = require('./config/config')
+const ClientRouter = require('./routes/client')
 
 class App {
     constructor() {
@@ -30,6 +31,7 @@ class App {
         this.productRouter = new ProducRouter(this.app)
         this.orderProducRouter = new OrderProducRouter(this.app)
         this.garcomRouter = new GarcomRouter(this.app)
+        this.clientRouter = new ClientRouter(this.app)
     }
 }
 
