@@ -135,6 +135,37 @@ class OrderController extends Queries {
                 return Promise.reject(err)
             })
     }
+
+    finalizeOreder(idPedido) {
+        return this.createConnectionSQL()
+            .then(() => {
+                return new Promise((resolve, reject) => {
+                    this.conn.connect((err) => {
+                        if (err) {
+                            reject(err)
+                        } else {
+                            const sql = `UPDATE pedido SET status = 'encerrado' WHERE id_pedido = ${idPedido}`
+
+                            this.conn.query(sql, (err, result, fields) => {
+                                if (err) {
+                                    reject(err)
+                                } else {
+                                    resolve(result)
+                                }
+                            })
+                        }
+                    })
+                })
+            })
+            .then((res) => {
+                this.conn.end()
+                return Promise.resolve(res)
+            })
+            .catch((err) => {
+                this.conn.end()
+                return Promise.reject(err)
+            })
+    }
 }
 
 

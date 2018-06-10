@@ -40,6 +40,18 @@ class RouteTable {
           })
       })
 
+    this.app.route('/finalizeOrder/:id')
+      .get((req, res) => {
+        this.orderController.finalizeOreder(req.params.id)
+          .then(response => {
+            res.status(200)
+            res.json(response)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      })
+
     this.app.route('/order/:id')
       .get((req, res) => {
         this.orderController.getById(req.params.id)
