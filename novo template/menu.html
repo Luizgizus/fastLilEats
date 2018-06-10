@@ -1,178 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-	<title>Cardápio La Nourriture</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	<link rel="icon" type="image/png" href="images/icons/favicon.png" />
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-	 crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
+	<head>
+		<title>Cardápio La Nourriture</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+		<link rel="icon" type="image/png" href="images/icons/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+		<!--<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+		 crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
+		<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+		<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+		<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+		<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
+		<link rel="stylesheet" type="text/css" href="css/util.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
 
-<body class="animsition">
+	<body class="animsition">
 
-	<!-- Header -->
-	<header>
-		<!-- Header desktop -->
-		<div class="wrap-menu-header gradient1 trans-0-4">
-			<div class="container h-full">
-				<div class="wrap_header trans-0-3">
-					<!-- Logo -->
-					<div class="logo">
-						<a href="index.html">
-							<img src="logoum.png" alt="IMG-LOGO" data-logofixed="logoum.png">
-						</a>
-					</div>
+		<!-- Header -->
+		<header>
+			<!-- Header desktop -->
+			<div class="wrap-menu-header gradient1 trans-0-4">
+				<div class="container h-full">
+					<div class="wrap_header trans-0-3">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="index.html">
+								<img src="logoum.png" alt="IMG-LOGO" data-logofixed="logoum.png">
+							</a>
+						</div>
 
-					<!-- Menu -->
-					<div class="wrap_menu p-l-45 p-l-0-xl">
-						<nav class="menu">
-							<ul class="main_menu">
-								<li>
-									<a href="index.html">Início</a>
-								</li>
+						<!-- Menu -->
+						<div class="wrap_menu p-l-45 p-l-0-xl">
+							<nav class="menu">
+								<ul class="main_menu">
+									<li>
+										<a href="index.html">Início</a>
+									</li>
 
-								<li>
-									<a href="menu.html">Cardápio</a>
-								</li>
-								<li>
-									<a href="pedido.html">Meu Pedido</a>
-								</li>
-								<li>
-									<a href="acpedido.html">Acompanhar Pedido</a>
-								</li>
-							</ul>
-						</nav>
+									<li>
+										<a href="menu.html">Cardápio</a>
+									</li>
+									<li>
+										<a href="pedido.html">Meu Pedido</a>
+									</li>
+									<li>
+										<a href="acpedido.html">Acompanhar Pedido</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</header>
-	<!-- Title Page -->
-	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(respic.jpg);">
-		<h2 class="tit6 t-center">
-			Cardápio La Nourriture
-		</h2>
-	</section>
+		</header>
+		<!-- Title Page -->
+		<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(respic.jpg);">
+			<h2 class="tit6 t-center">
+				Cardápio La Nourriture
+			</h2>
+		</section>
 
 
-	<!-- Main menu -->
-	<section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
-					<div class="wrap-item-mainmenu p-b-22">
+		<!-- Main menu -->
+		<section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
+						<div class="wrap-item-mainmenu p-b-22">
 
-						<h3 class="tit-mainmenu tit10 p-b-25">
-							Nossos produtos:
-						</h3>
+							<h3 class="tit-mainmenu tit10 p-b-25">
+								Nossos produtos:
+							</h3>
 
-						<!-- Item mainmenu -->
-						<div id="listaDeProdutos" class="item-mainmenu m-b-36">
+							<!-- Item mainmenu -->
+							<div id="listaDeProdutos" class="item-mainmenu m-b-36">
 
-						</div>
-
-
-						<div class="row">
-							<div class="col-lg-3">
 							</div>
+
+
 							<div class="row">
-								<div class="col-lg-5 col-lg-offset-4">
-									<label>CPF: </label>
-									<input type="text" placeholder="Digite o seu CPF..." id="nomeCliente">
+								<div class="col-lg-3">
 								</div>
-								<div class="col-lg-12">
+								<div class="row">
+									<div class="col-lg-5 col-lg-offset-4">
+										<label>CPF: </label>
+										<input type="text" placeholder="Digite o seu CPF..." id="nomeCliente">
+									</div>
+									<div class="col-lg-12">
 										<label>Garçom: </label>
 										<select id="garcom" style="font-size: 10px; width: 202px;"></select>
 									</div>
-		
+
 									<div class="col-lg-12">
 										<label>Mesa: </label>
 										<select id="mesa" style="font-size: 10px; width: 222px;"></select>
 									</div>
+								</div>
+
 							</div>
-							
-						</div>
-						<div class="modal-footer centered">
-							<button type="button" class="btn btn-round btn-success" onclick="fazerPedido()">Fazer pedido</button>
-						</div>
+							<div class="modal-footer centered">
+								<button type="button" class="btn btn-round btn-success" onclick="fazerPedido()">Fazer pedido</button>
+							</div>
 
-						<!-- Item mainmenu -->
+							<!-- Item mainmenu -->
 
+						</div>
 					</div>
 				</div>
 			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg1">
+			<div class="txt17 p-r-20 p-t-5 p-b-5">
+				Copyright &copy; 2018 All rights reserved | This template is made with
+				<i class="fa fa-heart"></i> by
+				<a href="https://colorlib.com" target="_blank">Colorlib</a>
+			</div>
+			</div>
+			</div>
+			</div>
+		</footer>
+
+
+		<!-- Back to top -->
+		<div class="btn-back-to-top bg0-hov" id="myBtn">
+			<span class="symbol-btn-back-to-top">
+				<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+			</span>
 		</div>
-	</section>
-
-	<!-- Footer -->
-	<footer class="bg1">
-		<div class="txt17 p-r-20 p-t-5 p-b-5">
-			Copyright &copy; 2018 All rights reserved | This template is made with
-			<i class="fa fa-heart"></i> by
-			<a href="https://colorlib.com" target="_blank">Colorlib</a>
-		</div>
-		</div>
-		</div>
-		</div>
-	</footer>
-
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top bg0-hov" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
-		</span>
-	</div>
 
 
 
-	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
-	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
-	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
-	<script type="text/javascript" src="vendor/daterangepicker/moment.min.js"></script>
-	<script type="text/javascript" src="vendor/daterangepicker/daterangepicker.js"></script>
-	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-	<script type="text/javascript" src="js/slick-custom.js"></script>
-	<script type="text/javascript" src="vendor/parallax100/parallax100.js"></script>
-	<script type="text/javascript">
-		$('.parallax100').parallax100();
-	</script>
-	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
-	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
-	<script src="js/main.js"></script>
+		<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+		<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+		<script type="text/javascript" src="vendor/daterangepicker/moment.min.js"></script>
+		<script type="text/javascript" src="vendor/daterangepicker/daterangepicker.js"></script>
+		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+		<script type="text/javascript" src="js/slick-custom.js"></script>
+		<script type="text/javascript" src="vendor/parallax100/parallax100.js"></script>
+		<script type="text/javascript">
+			$('.parallax100').parallax100();
+		</script>
+		<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+		<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
+		<script src="js/main.js"></script>
 
-	<script>
-		lista = document.querySelector('#listaDeProdutos');
+		<script>
+			lista = document.querySelector('#listaDeProdutos');
 
-		window.onload = () => {
-			getAll();
-			pegarDados();
-		};
+			window.onload = () => {
+				getAll();
+				pegarDados();
+			};
 
-		function templateLi(id_produto, nome, descricao, valor, tipo, tempo_estimado, element = true) {
+			function templateLi(id_produto, nome, descricao, valor, tipo, tempo_estimado, element = true) {
 
-			return `${element ? `<div class="flex-w flex-b m-b-3">` : ''}
-								<a href="#" class="name-item-mainmenu txt21">
+				return `${element ? `<div class="flex-w flex-b m-b-3">` : ''}
+								<span class="name-item-mainmenu txt21">
 									${nome}
-								</a>
+								</span>
+
+								<div class="text-right">
+								<button type="button" onclick="addComidinha(${id_produto},${tempo_estimado})" class="btn btn-default btn-sm">
+									<i class="fas fa-cart-plus"> Adicionar</i>
+								</button>
+							${element ? `</div>` : ''}
 
 								<div class="line-item-mainmenu bg3-pattern"></div>
 
@@ -189,119 +195,116 @@
 							<span id="${id_produto}" class="info-item-mainmenu txt23">
 								QUANTIDADE: 0
 							</span>
-							<div class="text-right">
-								<button type="button" onclick="addComidinha(${id_produto},${tempo_estimado})" class="btn btn-default btn-sm">
-									<i class="fas fa-cart-plus"> Adicionar</i>
-								</button>
-							${element ? `</div>` : ''}
+								<hr>
 							`;
-		}
+			}
 
-		function getAll() {
-			axios.get('http://localhost:8000/product')
-				.then((response) => {
-					console.log(response);
-					response.data.forEach(element => {
-						lista.innerHTML += templateLi(element.id_produto, element.nome, element.descricao, element.valor, element.tipo, element.tempo_estimado);
+			function getAll() {
+				axios.get('http://localhost:8000/product')
+					.then((response) => {
+						console.log(response);
+						response.data.forEach(element => {
+							lista.innerHTML += templateLi(element.id_produto, element.nome, element.descricao, element.valor, element.tipo, element.tempo_estimado);
+						});
+					})
+					.catch((error) => {
+						console.log(error);
 					});
-				})
-				.catch((error) => {
-					console.log(error);
-				});
-		};
+			};
 
-		let productKeys = {}
-		let tempoEstimadoTotal = 0
+			let productKeys = {}
+			let tempoEstimadoTotal = 0
 
-		const addComidinha = (idProduto, tempoEstimado) => {
-			tempoEstimadoTotal += tempoEstimado
-			if (productKeys[idProduto]) {
-				productKeys[idProduto].qunatidade++;
-				document.getElementById(idProduto).innerHTML = 'QUANTIDADE: ' + productKeys[idProduto].qunatidade;
+			const addComidinha = (idProduto, tempoEstimado) => {
+				tempoEstimadoTotal += tempoEstimado
+				if (productKeys[idProduto]) {
+					productKeys[idProduto].qunatidade++;
+					document.getElementById(idProduto).innerHTML = 'QUANTIDADE: ' + productKeys[idProduto].qunatidade;
 
-			} else {
-				productKeys[idProduto] = {
-					id_produto: idProduto,
-					qunatidade: 1,
-					tempoEstimado: tempoEstimado
-				}
-				document.getElementById(idProduto).innerHTML = 'QUANTIDADE: 1';
-			}
-		}
-
-		const pegarDados = () => {
-			let Request2 = new XMLHttpRequest()
-			let Request3 = new XMLHttpRequest()
-
-			Request2.open("GET", "http://localhost:8000/tables", true)
-			Request2.setRequestHeader("Content-Type", "application/json");
-			Request2.send()
-			Request2.onreadystatechange = function () {
-				if (Request2.readyState == 4 && Request2.status == 200) {
-					var data = JSON.parse(Request2.responseText);
-					const mesaID = document.getElementById("mesa")
-					let mesa = `<option value="" selected>Selecione</option>`
-
-					for (let i = 0; i < data.length; i++) {
-						mesa += `<option value="${data[i].id_mesa}">${data[i].nome}</option>`
+				} else {
+					productKeys[idProduto] = {
+						id_produto: idProduto,
+						qunatidade: 1,
+						tempoEstimado: tempoEstimado
 					}
-
-					mesaID.innerHTML = mesa
+					document.getElementById(idProduto).innerHTML = 'QUANTIDADE: 1';
 				}
 			}
 
-			Request3.open("GET", "http://localhost:8000/garcom", true)
-			Request3.setRequestHeader("Content-Type", "application/json");
-			Request3.send()
-			Request3.onreadystatechange = function () {
-				if (Request3.readyState == 4 && Request3.status == 200) {
-					var data = JSON.parse(Request3.responseText);
-					const garcomID = document.getElementById("garcom")
-					let garcom = `<option value="" selected>Selecione</option>`
+			const pegarDados = () => {
+				let Request2 = new XMLHttpRequest()
+				let Request3 = new XMLHttpRequest()
 
-					for (let i = 0; i < data.length; i++) {
-						garcom += `<option value="${data[i].id_garcon}">${data[i].nome}</option>`
+				Request2.open("GET", "http://localhost:8000/tables", true)
+				Request2.setRequestHeader("Content-Type", "application/json");
+				Request2.send()
+				Request2.onreadystatechange = function () {
+					if (Request2.readyState == 4 && Request2.status == 200) {
+						var data = JSON.parse(Request2.responseText);
+						const mesaID = document.getElementById("mesa")
+						let mesa = `<option value="" selected>Selecione</option>`
+
+						for (let i = 0; i < data.length; i++) {
+							mesa += `<option value="${data[i].id_mesa}">${data[i].nome}</option>`
+						}
+
+						mesaID.innerHTML = mesa
 					}
-
-					garcomID.innerHTML = garcom
 				}
-			}
-		}
-		const fazerPedido = () => {
-			let Request = new XMLHttpRequest()
-			const idGarcon = document.getElementById("garcom").value
-			const idMesa = document.getElementById("mesa").value
-			const nomeCliente = document.getElementById("nomeCliente").value
 
-			let request = {
-				"id_garcon": idGarcon,
-				"id_mesa": idMesa,
-				"tempoEstimadoTotal": tempoEstimadoTotal,
-				"nomeCliente": nomeCliente,
-				"products": []
-			}
+				Request3.open("GET", "http://localhost:8000/garcom", true)
+				Request3.setRequestHeader("Content-Type", "application/json");
+				Request3.send()
+				Request3.onreadystatechange = function () {
+					if (Request3.readyState == 4 && Request3.status == 200) {
+						var data = JSON.parse(Request3.responseText);
+						const garcomID = document.getElementById("garcom")
+						let garcom = `<option value="" selected>Selecione</option>`
 
-			const keys = Object.keys(productKeys)
-			for (let i = 0; i < keys.length; i++) {
-				request.products.push(productKeys[keys[i]])
-			}
+						for (let i = 0; i < data.length; i++) {
+							garcom += `<option value="${data[i].id_garcon}">${data[i].nome}</option>`
+						}
 
-
-			Request.open("POST", "http://localhost:8000/order", true)
-			Request.setRequestHeader("Content-Type", "application/json");
-			Request.send(JSON.stringify(request))
-			Request.onreadystatechange = function () {
-				if (Request.readyState == 4 && Request.status == 200) {
-					var data = JSON.parse(Request.responseText);
-					if (!data.message) {
-						alert("pedido realizado com sucesso")
+						garcomID.innerHTML = garcom
 					}
 				}
 			}
-		}
+			const fazerPedido = () => {
+				let Request = new XMLHttpRequest()
+				const idGarcon = document.getElementById("garcom").value
+				const idMesa = document.getElementById("mesa").value
+				const nomeCliente = document.getElementById("nomeCliente").value
 
-	</script>
+				let request = {
+					"id_garcon": idGarcon,
+					"id_mesa": idMesa,
+					"tempoEstimadoTotal": tempoEstimadoTotal,
+					"nomeCliente": nomeCliente,
+					"products": []
+				}
 
-</body>
+				const keys = Object.keys(productKeys)
+				for (let i = 0; i < keys.length; i++) {
+					request.products.push(productKeys[keys[i]])
+				}
+
+
+				Request.open("POST", "http://localhost:8000/order", true)
+				Request.setRequestHeader("Content-Type", "application/json");
+				Request.send(JSON.stringify(request))
+				Request.onreadystatechange = function () {
+					if (Request.readyState == 4 && Request.status == 200) {
+						var data = JSON.parse(Request.responseText);
+						if (!data.message) {
+							alert("pedido realizado com sucesso")
+							window.location = "pedido.html"
+						}
+					}
+				}
+			}
+
+		</script>
+
+	</body>
 
 </html>
