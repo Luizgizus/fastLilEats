@@ -1,242 +1,317 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-	<head>
-		<title>Meu Pedido</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-		<link rel="icon" type="image/png" href="images/icons/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-		 crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
-		<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-		<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-		<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-		<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-		<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-		<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-		<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
-		<link rel="stylesheet" type="text/css" href="css/util.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-	</head>
+<head>
+	<title>Meu Pedido</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link rel="icon" type="image/png" href="images/icons/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
 
-	<body class="animsition">
+<body class="animsition">
 
-		<!-- Header -->
-		<header>
-			<!-- Header desktop -->
-			<div class="wrap-menu-header gradient1 trans-0-4">
-				<div class="container h-full">
-					<div class="wrap_header trans-0-3">
-						<!-- Logo -->
-						<div class="logo">
-							<a href="index.html">
-								<img src="logoum.png" alt="IMG-LOGO" data-logofixed="logoum.png">
-							</a>
-						</div>
-
-						<!-- Menu -->
-						<div class="wrap_menu p-l-45 p-l-0-xl">
-							<nav class="menu">
-								<ul class="main_menu">
-									<li>
-										<a href="index.html">Início</a>
-									</li>
-
-									<li>
-										<a href="menu.html">Cardápio</a>
-									</li>
-									<li>
-										<a href="pedido.html">Meu Pedido</a>
-									</li>
-									<li>
-										<a href="acpedido.html">Acompanhar Pedido</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-
-
-
-		<!-- Title Page -->
-		<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(acdois.jpg);">
-			<h2 class="tit6 t-center">
-				Acompanhar Pedido
-			</h2>
-		</section>
-
-		</br>
-		</br>
-		</br>
-		<div class="text-center">
-			<button type="submit" class="btn btn-default" data-toggle="modal" data-target="#itempedido">
-				Visualizar itens do pedido
-			</button>
-		</div>
-		<!-- Main menu -->
-		<section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
-						<div class="wrap-item-mainmenu p-b-22">
-							<h3 class="tit-mainmenu tit10 p-b-25">
-								Pedido
-							</h3>
-
-							<div class="item-mainmenu m-b-36">
-								<div class="flex-w flex-b m-b-3">
-									<span class="name-item-mainmenu txt21">
-										Mesa 2
-									</span>
-								</div>
-								<div class="flex-w flex-b m-b-3">
-									<span class="name-item-mainmenu txt21">
-										Cliente: Maria Silva
-										</br>
-										CPF: 12345678900
-									</span>
-								</div>
-								<div class="flex-w flex-b m-b-3">
-									<span class="name-item-mainmenu txt21">
-										Status Pedido: Em andamento
-									</span>
-								</div>
-								<div class="flex-w flex-b m-b-3">
-									<span class="name-item-mainmenu txt21">
-										Garçom responsável: João Fernandes
-									</span>
-								</div>
-							</div>
-						</div>
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="wrap-menu-header gradient1 trans-0-4">
+			<div class="container h-full">
+				<div class="wrap_header trans-0-3">
+					<!-- Logo -->
+					<div class="logo">
+						<a href="index.html">
+							<img src="logoum.png" alt="IMG-LOGO" data-logofixed="logoum.png">
+						</a>
 					</div>
 
+					<!-- Menu -->
+					<div class="wrap_menu p-l-45 p-l-0-xl">
+						<nav class="menu">
+							<ul class="main_menu">
+								<li>
+									<a href="index.html">Início</a>
+								</li>
 
-
-
-
-
-
-					<div class="wrap-btn-booking flex-c-m">
-						<!-- Button3 -->
-						<button type="submit" class="btn3 flex-c-m size36 txt11 trans-0-4" data-toggle="modal" data-target="#fecharpedidomodal">
-							Finalizar Pedido
-						</button>
-					</div>
-					</form>
-				</div>
-			</div>
-			</div>
-		</section>
-
-
-		<!-- Modal Fechar pedido  -->
-		<div class="modal fade" id="fecharpedidomodal" tabindex="-1" role="dialog" aria-labelledby="fecharpedidomodal" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Finalizar pedido</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						O garçom responsável em breve irá se encaminhar até a mesa para realizar o fechamento do pedido.
-						</br>
-						Agradecemos a preferência.
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+								<li>
+									<a href="menu.html">Cardápio</a>
+								</li>
+								<li>
+									<a href="pedido.html">Meu Pedido</a>
+								</li>
+								<li>
+									<a href="acpedido.html">Acompanhar Pedido</a>
+								</li>
+							</ul>
+						</nav>
 					</div>
 				</div>
 			</div>
 		</div>
+	</header>
 
-		<!-- Modal Fechar pedido  -->
-		<div class="modal fade" id="itempedido" tabindex="-1" role="dialog" aria-labelledby="itempedido" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Finalizar pedido</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
+
+
+
+	<!-- Title Page -->
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(acdois.jpg);">
+		<h2 class="tit6 t-center">
+			Acompanhar Pedido
+		</h2>
+	</section>
+
+	</br>
+	</br>
+	</br>
+	<div class="text-center">
+
+
+		<!-- Email -->
+		<span class="txt9">
+			CPF
+		</span>
+
+		<div class="wrap-inputemail size12 bo2 bo-rad-10 m-t-3 m-b-23" style="width: 500px; margin-left: 35%;">
+			<input class="bo-rad-10 sizefull txt10 p-l-20" id="nomeCliente" type="text" name="cpf" onblur="pegarDados()" placeholder="Digite seu CPF">
+		</div>
+
+
+	</div>
+	</div>
+
+
+
+	<!-- Main menu -->
+	<section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
+		<div class="container">
+			<div class="row">
+
+				<div id="orderData" class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
+				</div>
+				<div class="wrap-btn-booking flex-c-m">
+					<!-- Button3 -->
+					<button id="btnVisualizar" type="submit" class="btn3 flex-c-m size36 txt11 trans-0-4" style="display: none;" onclick="getItensByIdOrder()" data-toggle="modal" data-target="#itempedido">
+						Visualizar Itens
+					</button>
+				</div>
+				<div class="wrap-btn-booking flex-c-m">
+					<button id="btnFinalizar" type="submit" class="btn3 flex-c-m size36 txt11 trans-0-4" style="display: none;"  data-toggle="modal" data-target="#fecharpedidomodal">
+						Finalizar Pedido
+					</button>
+				</div>
+			</div>
+			</form>
+
+
+		</div>
+		</div>
+		</div>
+	</section>
+
+
+	<!-- Modal Fechar pedido  -->
+	<div class="modal fade" id="fecharpedidomodal" tabindex="-1" role="dialog" aria-labelledby="fecharpedidomodal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Finalizar pedido</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					O garçom responsável em breve irá se encaminhar até a mesa para realizar o fechamento do pedido.
+					</br>
+					Agradecemos a preferência.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Fechar pedido  -->
+	<div class="modal fade" id="itempedido" tabindex="-1" role="dialog" aria-labelledby="itempedido" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Finalizar pedido</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div id="pedidoItensTable" class="modal-body">
+
+				</div>
+				<div id="valorTotal" style="margin-left: 15px;">
+					Total: $
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<footer class="bg1">
+		<div class="txt17 p-r-20 p-t-5 p-b-5">
+			Copyright &copy; 2018 All rights reserved | This template is made with
+			<i class="fa fa-heart"></i> by
+			<a href="https://colorlib.com" target="_blank">Colorlib</a>
+		</div>
+		</div>
+		</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top bg0-hov" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+		</span>
+	</div>
+
+	<!-- Container Selection1 -->
+	<div id="dropDownSelect1"></div>
+
+
+	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+	<script type="text/javascript" src="vendor/daterangepicker/moment.min.js"></script>
+	<script type="text/javascript" src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/slick-custom.js"></script>
+	<script type="text/javascript" src="vendor/parallax100/parallax100.js"></script>
+	<script type="text/javascript">
+		$('.parallax100').parallax100();
+	</script>
+	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="js/map-custom.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		const pegarDados = () => {
+			let Request = new XMLHttpRequest()
+			const nameClient = document.getElementById("nomeCliente").value
+
+			const request = {
+				clientName: nameClient
+			}
+
+			Request.open("POST", "http://localhost:8000/order/byName", true)
+			Request.setRequestHeader("Content-Type", "application/json");
+			Request.send(JSON.stringify(request))
+			Request.onreadystatechange = function () {
+				if (Request.readyState == 4 && Request.status == 200) {
+					var data = JSON.parse(Request.responseText)[0];
+					console.log(data);
+					atualIdPedido = data.id_pedido
+					const divOrderData = document.getElementById("orderData")
+					const value = `
+					<div class="wrap-item-mainmenu p-b-22">
+						<h3 class="tit-mainmenu tit10 p-b-25">
+							Pedido
+						</h3>
 						<div class="item-mainmenu m-b-36">
 							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Pine nut sbrisalona
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$29.79
-								</div>
+								<span class="name-item-mainmenu txt21">
+									Status: ${data.status}
+								</span>
 							</div>
-							<span class="info-item-mainmenu txt23">
-								Sed fermentum eros vitae eros
-							</span>
+							<div class="flex-w flex-b m-b-3">
+								<span class="name-item-mainmenu txt21">
+									Tempo Estimado: ${data.tempoEsperaTotal} Minutos
+								</span>
+							</div>
+							<div class="flex-w flex-b m-b-3">
+								<span class="name-item-mainmenu txt21">
+									Garçom responsável: ${data.nomeGarcon}
+								</span>
+							</div>
 						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-					</div>
-				</div>
-			</div>
-		</div>
+                                    `
+					divOrderData.innerHTML = value
+				}
+			}
+	
+			document.getElementById("btnVisualizar").style.display = 'block';
+			document.getElementById("btnFinalizar").style.display = 'block';
+		}
 
+		const getItensByIdOrder = () => {
+			let Request = new XMLHttpRequest()
 
-		<!-- Footer -->
-		<footer class="bg1">
-			<div class="txt17 p-r-20 p-t-5 p-b-5">
-				Copyright &copy; 2018 All rights reserved | This template is made with
-				<i class="fa fa-heart"></i> by
-				<a href="https://colorlib.com" target="_blank">Colorlib</a>
-			</div>
-			</div>
-			</div>
-			</div>
-		</footer>
+			Request.open("GET", "http://localhost:8000/pedidoProduto/" + atualIdPedido, true)
+			Request.setRequestHeader("Content-Type", "application/json");
+			Request.send()
+			Request.onreadystatechange = function () {
+				if (Request.readyState == 4 && Request.status == 200) {
+					var data = JSON.parse(Request.responseText);
+					const tableMesa = document.getElementById("pedidoItensTable")
+					let dataTable = ``
+					let valorTotal = 0
+					if (data && data.length) {
+						for (var i = 0; i < data.length; i++) {
+							valorTotal += (data[i].valor * data[i].qtd)
+							dataTable += `
+                                      
+											<div class="item-mainmenu m-b-36">
+												<div class="flex-w flex-b m-b-3">
+													<a href="#" class="name-item-mainmenu txt21">
+															${data[i].nome}
+													</a>
 
+													<div class="line-item-mainmenu bg3-pattern"></div>
 
-		<!-- Back to top -->
-		<div class="btn-back-to-top bg0-hov" id="myBtn">
-			<span class="symbol-btn-back-to-top">
-				<i class="fa fa-angle-double-up" aria-hidden="true"></i>
-			</span>
-		</div>
+													<div class="price-item-mainmenu txt22">
+														$${(data[i].valor * data[i].qtd)}
+													</div>
+												</div>
+												<span class="info-item-mainmenu txt23">
+													Tempo Estimado: ${data[i].tempo_estimado} Minutos
+												</span><br>
+												<span class="info-item-mainmenu txt23">
+														Quantidade: ${data[i].qtd}
+												</span>
+											</div>
+                                        `
+						}
+					} else {
+						dataTable = `
+                                        <tr>
+                                        <td colspan="3">Nenhuma mesa encontrada</td>
+                                        </tr>
+                                    `
+					}
+					document.getElementById("valorTotal").innerHTML += valorTotal
+					tableMesa.innerHTML = dataTable
+				}
+			}
+		}
+	</script>
 
-		<!-- Container Selection1 -->
-		<div id="dropDownSelect1"></div>
-
-
-		<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
-		<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
-		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
-		<script type="text/javascript" src="vendor/daterangepicker/moment.min.js"></script>
-		<script type="text/javascript" src="vendor/daterangepicker/daterangepicker.js"></script>
-		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-		<script type="text/javascript" src="js/slick-custom.js"></script>
-		<script type="text/javascript" src="vendor/parallax100/parallax100.js"></script>
-		<script type="text/javascript">
-			$('.parallax100').parallax100();
-		</script>
-		<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
-		<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-		<script src="js/map-custom.js"></script>
-		<script src="js/main.js"></script>
-
-	</body>
+</body>
 
 </html>
