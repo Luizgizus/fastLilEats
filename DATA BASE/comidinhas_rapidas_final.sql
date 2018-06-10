@@ -163,3 +163,16 @@ CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`pedido_produto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
+
+-- -----------------------------------------------------
+-- Table `comidinhas_rapidas`.`usuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `comidinhas_rapidas`.`usuarios` (
+  `idusuarios` INT NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(16) NOT NULL,
+  `senha` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idusuarios`),
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC))
+ENGINE = InnoDB;
