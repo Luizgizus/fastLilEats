@@ -61,7 +61,7 @@ class OrderController extends Queries {
                         if (err) {
                             reject(err)
                         } else {
-                            const sql = `SELECT * FROM ${this.table} WHERE nomeCliente = "${name}"`
+                            const sql = `SELECT * FROM ${this.table} WHERE nomeCliente = "${name}" and status != 'encerrado'`
 
                             this.conn.query(sql, (err, result, fields) => {
                                 if (err) {
