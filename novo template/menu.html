@@ -89,8 +89,12 @@
 								<div class="col-lg-3">
 								</div>
 								<div class="row">
-									<div class="col-lg-5 col-lg-offset-4">
+									<div class="col-lg-5">
 										<label>CPF: </label>
+										<input type="text" placeholder="Digite o seu CPF..." id="cpfCliente">
+									</div>
+									<div class="col-lg-5 col-lg-offset-2">
+										<label>Nome: </label>
 										<input type="text" placeholder="Digite o seu CPF..." id="nomeCliente">
 									</div>
 									<div class="col-lg-12">
@@ -271,12 +275,14 @@
 				const idGarcon = document.getElementById("garcom").value
 				const idMesa = document.getElementById("mesa").value
 				const nomeCliente = document.getElementById("nomeCliente").value
+				const cpfCliente = document.getElementById("cpfCliente").value
 
 				let request = {
 					"id_garcon": idGarcon,
 					"id_mesa": idMesa,
 					"tempoEstimadoTotal": tempoEstimadoTotal,
 					"nomeCliente": nomeCliente,
+					"cpfCliente": cpfCliente,
 					"products": []
 				}
 

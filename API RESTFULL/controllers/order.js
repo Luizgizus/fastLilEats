@@ -1,10 +1,11 @@
 const Queries = require("./queries")
 const PedidoProduto = require("./pedido_produto")
 const Garcom = require("./garcom")
+const ClientController = require('../controllers/client')
 
 class OrderController extends Queries {
     constructor() {
-        super("pedido", ["garcon_id_garcon", "mesa_id_mesa", "status", "tempoEsperaTotal", "nomeCliente"])
+        super("pedido", ["garcon_id_garcon", "mesa_id_mesa", "status", "tempoEsperaTotal", "nomeCliente", 'cpfCliente'])
     }
 
     createOrder(params) {
@@ -16,7 +17,7 @@ class OrderController extends Queries {
                             reject(err)
                         } else {
                             console.log(params)
-                            const sql = `INSERT INTO ${this.table} (${this.strColumns}) VALUES ("${params.id_garcon}", "${params.id_mesa}", "Em Andamento", "${params.tempoEstimadoTotal}", "${params.nomeCliente}")`
+                            const sql = `INSERT INTO ${this.table} (${this.strColumns}) VALUES ("${params.id_garcon}", "${params.id_mesa}", "Em Andamento", "${params.tempoEstimadoTotal}", "${params.nomeCliente}", "${params.cpfCliente}")`
 
                             this.conn.query(sql, (err, result) => {
                                 if (err) {
@@ -41,6 +42,10 @@ class OrderController extends Queries {
                 }
 
                 return res
+            })
+            .then(() => {
+                const clientController = new ClientController()
+                return clientController.create(params)
             })
             .then((res) => {
                 this.conn.end()
