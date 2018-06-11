@@ -142,6 +142,7 @@ class OrderController extends Queries {
     }
 
     finalizeOreder(idPedido) {
+        let idGarcon = null
         return this.createConnectionSQL()
             .then(() => {
                 return new Promise((resolve, reject) => {
@@ -166,7 +167,31 @@ class OrderController extends Queries {
                 this.conn.end()
                 return Promise.resolve(res)
             })
+            .then(() => {
+                return this.getById(idPedido)
+            })
+            .then((res) => {
+                console.log("\n\n\n\n\n\n\n")
+                console.log(res)
+                idGarcon = res[0].garcon_id_garcon
+                const pedidoProduto = new PedidoProduto()
+                return pedidoProduto.getItensByOrder(idPedido)
+            })
+            .then((res) => {
+                console.log("cheguei aqui 2")
+                console.log(res)
+                let valortotal = 0
+                let valorComissao = 0
+                let garcom = new Garcom()
+                for (let i = 0; i < res.length; i++) {
+                    valortotal += res[i].valor * res[i].qtd
+                }
+
+                valorComissao = valortotal * 0.1
+                return garcom.updateGorjeta(idGarcon, valorComissao)
+            })
             .catch((err) => {
+                console.log(err)
                 this.conn.end()
                 return Promise.reject(err)
             })

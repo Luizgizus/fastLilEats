@@ -9,8 +9,6 @@ class PedidoProdutoController extends Queries {
     }
 
     create(params, idPedido) {
-        console.log(params)
-        console.log(idPedido)
         return this.createConnectionSQL()
             .then(() => {
                 return new Promise((resolve, reject) => {
