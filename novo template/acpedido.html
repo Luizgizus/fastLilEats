@@ -159,6 +159,13 @@
 					<div id="valorTotal" style="margin-left: 15px;">
 						Total: $
 					</div>
+					<div style="margin-left: 15px;">
+						<label>Dividir por</label>
+						<input type="text" id="divisao" placeholder="" onchange="divde()">
+						<span id="valorTotalDividido">
+							Total Dividido: $
+						</span>
+					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
@@ -305,9 +312,17 @@
                                         </tr>
                                     `
 						}
+						valorDaConta = valorTotal
 						document.getElementById("valorTotal").innerHTML += valorTotal
 						tableMesa.innerHTML = dataTable
 					}
+				}
+			}
+
+			const divde = () => {
+				const divisao = parseInt(document.getElementById("divisao").value)
+				if (divisao && divisao > 0) {
+					document.getElementById("valorTotalDividido").innerHTML = `Total Dividido: $${(valorDaConta / divisao).toFixed(2)}`
 				}
 			}
 
